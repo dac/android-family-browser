@@ -9,7 +9,7 @@
 #
 #   shell>  split.py --input infile --output outfile_prefix --chunks 2
 #   # will split "infile" into "outfile_prefix0" and "outfile_prefix1"
-#   # you can recreate infile by running the following command: 
+#   # you can recreate infile by running the following command:
 #   # shell>  cat outfile_prefix0 outfile_prefix1 > infile
 #
 # DESCRIPTION
@@ -37,7 +37,7 @@ def get_options():
                       help = 'input FILE', metavar = 'FILE')
     parser.add_option('-o', '--output', dest = 'output_name',
                       help = 'output FILE')
-    parser.add_option('-n', '--chunks', dest = 'chunks', type = 'int', 
+    parser.add_option('-n', '--chunks', dest = 'chunks', type = 'int',
                       default = 10, help = 'number of chunks')
     options, args = parser.parse_args()
     return options
@@ -47,8 +47,8 @@ def get_options():
 def split_file(input_name, output_name, chunks):
     """
         split input file with name 'input_name',
-        into 'chunks' output files, with 
-        prefix 'output_name' and postfixes "0", 
+        into 'chunks' output files, with
+        prefix 'output_name' and postfixes "0",
         "1", up to str(chunks-1)
     """
     # open input file

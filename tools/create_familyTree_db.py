@@ -38,9 +38,10 @@ DEFAULT_NODE_ID = 1000000
 # by the way, "Sofía Chaves" is David Chaves' daugther
 DEFAULT_NODE_KEY = u'(Sofía Cristina Chaves Chen,1995)'
 
-# define all the "node attributes" metadata:
+# define all the "node attributes" metadata; remember that
+# fields will be displayed in numeric order by attribute_id
 ATTRIBUTES = (
-    # columns: attribute_id, yaml name, unicode label, hidden flag
+    # columns: attribute_id, field_name_in_yaml_file, unicode_label, hidden_flag
     (  1, 'name', u'Name', True ),
     (  2, 'aka', u'Also known as', False ),
     (  3, 'aka2', u'Also known as', False ),
@@ -128,7 +129,7 @@ def load_familyTree_dictionary(project_dir):
     """
         load the yaml file into a Python dictionary
     """
-    file = os.path.join(project_dir, 'tools', FAMILY_TREE_YAML)
+    file = os.path.join(project_dir, FAMILY_TREE_YAML)
     text = codecs.open(file, 'r', encoding = 'utf8').read()
     return yaml.safe_load(text)
 
@@ -218,6 +219,15 @@ def keys_sorted_by_weight(family_tree):
             return +1 # descending order
         elif value_b < value_a:
             return -1 # descending order
+        # normal order by birthdate, if available
+        if node_a.get('birthdate', None) and \
+           node_b.get('birthdate', None):
+            value_a = node_a['birthdate']
+            value_b = node_b['birthdate']
+            if value_a < value_b:
+                return -1 # ascending order
+            elif value_b < value_a:
+                return +1 # ascending order
         # normal order by name
         value_a = node_a['name']
         value_b = node_b['name']
@@ -295,9 +305,9 @@ def load_family_tree():
 
 def open_family_tree_db(project_dir):
     """
-       open an empty sqlite3 database
+       open/create an empty sqlite3 database
     """
-    file = os.path.join(project_dir, 'tools', FAMILY_TREE_SQLITE)
+    file = os.path.join(project_dir, FAMILY_TREE_SQLITE)
     # always create a new database - remove old one if it exists
     if os.path.exists(file):
         os.unlink(file)
@@ -316,9 +326,24 @@ def close_family_tree_db(conn):
     """
     conn.close()
 
+def create_android_tables(conn):
+    """
+       create all sqlite3 tables that Android uses internally
+    """
+    # create android_metadata - this table is needed by Android
+    # @see http://www.reigndesign.com/blog/using-your-own-sqlite-database-in-android-applications/
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS android_metadata (locale TEXT);
+    """)
+    conn.commit()
+    conn.execute("""
+        INSERT INTO android_metadata VALUES ('en_US');
+    """)
+    conn.commit()
+
 def create_family_tree_tables(conn):
     """
-       create all the sqlite3 tables that we use
+       create all sqlite3 tables that we use
 
        remember to update the Java source database/NodeModel.java
        if you change any of the table names or columns
@@ -523,6 +548,7 @@ def create_family_tree_db(family_tree):
     """
     project_dir = get_project_directory()
     conn = open_family_tree_db(project_dir)
+    create_android_tables(conn)
     create_family_tree_tables(conn)
     attributes_map = populate_attributes_table(conn)
     populate_nodes_table(conn, family_tree, attributes_map)

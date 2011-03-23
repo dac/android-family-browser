@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This file contains the layout used by screens/BrowserScreenBuilder.java.
+
+    The TabHost requires that a TabWidget and a FrameLayout within it.
+    To position the TabWidget and FrameLayout vertically, a LinearLayout is used.
+    The FrameLayout is where the content for each tab goes.
+    The TabWidget and the FrameLayout elements have the IDs tabs and tabcontent, respectively.
+    These names must be used so that the TabHost can retrieve references to each of them.
+    It expects exactly these names.
+    @see http://developer.android.com/resources/tutorials/views/hello-tabwidget.html
+  -->
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:orientation="vertical">
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"/>
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"/>
+    </LinearLayout>
+</TabHost>
