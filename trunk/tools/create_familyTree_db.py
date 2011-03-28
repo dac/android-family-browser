@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
 # coding: utf-8
 #
 # @(#) tools/create_familyTree_db.py
@@ -220,14 +220,17 @@ def keys_sorted_by_weight(family_tree):
         elif value_b < value_a:
             return -1 # descending order
         # normal order by birthdate, if available
-        if node_a.get('birthdate', None) and \
-           node_b.get('birthdate', None):
+        if node_a.get('birthdate', None) and node_b.get('birthdate', None):
             value_a = node_a['birthdate']
             value_b = node_b['birthdate']
             if value_a < value_b:
                 return -1 # ascending order
             elif value_b < value_a:
                 return +1 # ascending order
+        if node_a.get('birthdate', None):
+            return -1 # ascending order
+        if node_b.get('birthdate', None):
+            return +1 # ascending order
         # normal order by name
         value_a = node_a['name']
         value_b = node_b['name']
