@@ -1,4 +1,5 @@
-#! /usr/bin/make -f
+#!/usr/bin/make -f
+# coding: utf-8
 #
 # @(#) Makefile for GNU Make
 #
@@ -6,10 +7,13 @@
 #
 #   shell>  export PATH="$PATH:/path-to-android-sdk/tools"
 #   shell>  export PATH="$PATH:$JAVA_HOME/bin"
-#   shell>  make release
+#   shell>  make all
 #
 #   shell>  make start-emulator
+#
 #   shell>  make install-release
+#   shell>  make install-debug		# optional
+#
 #   shell>  make run-tests
 #   shell>  make run-monkey
 #
@@ -48,13 +52,14 @@ TEST_SOURCES := $(wildcard test/src/*/*/*/*/*/*.java) $(wildcard test/res/*/*.xm
 # use `android list targets` to see which APIs are available
 ANDROID_TARGET_ID := 4
 
+# ensure that all alphabetic sorts produce same results elsewhere
 LANG := C
 LC_ALL := C
 export LANG LC_ALL
 
 #--------------------------------------- phony targets
 
-all : debug release
+all : release debug
 	@ls -l bin/$(MAIN_NAME).apk test/bin/$(TEST_NAME).apk
 	@ls -l bin/$(MAIN_NAME)-debug.apk test/bin/$(TEST_NAME)-debug.apk
 
@@ -94,7 +99,7 @@ clobber : clobber-ant clobber-eclipse
 
 # remove trailing blanks - I do not like them
 remove-trailing-blanks :
-	sed -i -e "s/\s*$$//" Makefile $(MAIN_SOURCES) $(TEST_SOURCES) *.txt *.xml */*.py
+	sed -i -e "s/\s*$$//" Makefile $(MAIN_SOURCES) $(TEST_SOURCES) *.txt *.xml *.yaml */*.py
 
 .PHONY : all debug release clean clobber
 .PHONY : clobber-ant clobber-eclipse clobber-keystore
