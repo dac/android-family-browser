@@ -1,0 +1,10 @@
+#summary Describe familyTree.db database
+#labels sqlite3,Featured
+
+= Introduction =
+
+The database is used to store a directed graph, where each "node" (vertice) contains a list of key-value attributes, and the "links" (edges) define child-to-parent relationships
+
+The data stored in this database is a graph instead of a tree because any node can have many parents, not just one
+
+= Details =
