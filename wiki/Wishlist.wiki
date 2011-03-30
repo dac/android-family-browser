@@ -1,0 +1,32 @@
+#summary Future features
+
+These are the _features_ we might implement in the near future:
+
+----
+
+== Bilingual English/Spanish ==
+
+  * [Screenshots]
+    * add buttons to switch language, to the `TabStart` pane
+    * current language (English/Spanish) must be persistent
+    * use the string assets to load the group names at the `TabIndex` pane
+      * the names "Parents", "Children", "Siblings" are currently hard-coded
+    * use icons (instead of words) for the tab names
+      * use footprints instead of the word "Index"
+      * use a leaf instead of the word "Content"
+      * use a power dot instead of the word "Start"
+
+  * [Database]
+    * the "attributes" table must include attribute labels in English and Spanish
+
+----
+
+== Menu: Save Home / Go Home ==
+
+This application always start at the same node, which currently is `Sofía Cristina Chaves Chen`.  We should add a `Menu` option to set the current node to be the new starting node ("home")
+
+----
+
+
+
+   
