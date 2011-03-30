@@ -1,6 +1,6 @@
 #summary Future features
 
-These are the _features_ we might implement in the near future:
+These are future _features_:
 
 ----
 
@@ -13,8 +13,8 @@ These are the _features_ we might implement in the near future:
       * the names "Parents", "Children", "Siblings" are currently hard-coded
     * use icons (instead of words) for the tab names
       * use footprints instead of the word "Index"
-      * use a leaf instead of the word "Content"
-      * use a power dot instead of the word "Start"
+      * use a "leaf" instead of the word "Content"
+      * use a "tool icon" instead of the word "Start"
 
   * [Database]
     * the "attributes" table must include attribute labels in English and Spanish
@@ -23,7 +23,7 @@ These are the _features_ we might implement in the near future:
 
 == Menu: Save Home / Go Home ==
 
-This application always start at the same node, which currently is `Sofía Cristina Chaves Chen`.  We should add a `Menu` option to set the current node to be the new starting node ("home")
+  * add a `Menu` option "Save Home", to define the current node to be the starting node for future executions, instead of `Sofía Cristina Chaves Chen` which is what is currently implemented
 
 ----
 
