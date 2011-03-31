@@ -27,6 +27,16 @@ These are future _features_:
 
 ----
 
+== Add pictures ==
+
+  * add images (pictures/portraits) as node attributes
+    * images might be shared by multiple nodes
+    * images might have a label, which might be different on different nodes
+    * store the images as blobs inside the database, if possible
+
+----
+----
+
 
 
    
