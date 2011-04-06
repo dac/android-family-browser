@@ -7,7 +7,7 @@
 USING THE COMMAND-LINE ANDROID SDK TOOLS
 ========================================
 
-We use the 'Makefile' file to build the package which is published at the Android Market.
+We use the 'Makefile' file to build the package which is published in the Android Market.
 This 'Makefile' can also be used to run automated unit-tests.
 Please read the 'Makefile' file for more details
 
@@ -16,20 +16,25 @@ This makefile was originally written for 'android-sdk-linux_x86-1.6_r1' on Ubunt
 USING ECLIPSE FOR EDITING AND DEBUGGING
 =======================================
 
-You need to create two Android projects, "FamilyBrowser" and "FamilyBrowserTest",
+You need to install the Android Development Tools (ADT) plugin for Eclipse,
+see http://developer.android.com/sdk/eclipse-adt.html
+
+Then, you need to create two Android projects, "FamilyBrowser" and "FamilyBrowserTest",
 using File > New > Android Project:
 
   * Enter "Project name": FamilyBrowser
-  * Enable "Create project on existing source"
+  * Turn on check-box "Create project on existing source"
   * In "Location", browse to the current directory (".")
   * Be sure that the Build Target "Android 1.6" becomes selected
+  * Push the [Finish] button
 
   * Enter "Project name": FamilyBrowserTest
-  * Enable "Create project on existing source"
+  * Turn on check-box "Create project on existing source"
   * In "Location", browse to the test sub-directory ("./test")
   * Be sure that the Build Target "Android 1.6" becomes selected
+  * Push the [Finish] button
 
-However, you still will need the command-line 'Makefile' to process the 'familyTree.yaml' file
+You still need to use the command-line 'Makefile' to process the 'familyTree.yaml' file
 
 We originally used Eclipse 3.1 on Microsoft Windows 7
 
@@ -55,5 +60,7 @@ well, in source file test/src/.../database/SampleData.java
 
 If you update this file, then consider increasing the value DATABASE_VERSION in
 the source file database/NodeModel.java
+
+You might want to read http://code.google.com/p/android-family-browser/wiki/Database
 
 #--------------------------------------- The End
