@@ -68,9 +68,9 @@ The nodes table contains these columns:
   * `node_id` integer - internal, unique id for this node, but not `primary key` of this table
   * `attr_id` integer - foreign key to the attributes table `attrs_tab`
   * `link_id` integer - `node_id` of the destination node, when `attr_id` says that this is a "link" attribute (like the _parent_ link)
-    * the `link_id` is null when this `attr_id` indicates that this is a normal attribute, not a link to any other node
+    * this `link_id` is null when the `attr_id` says this is a normal attribute, not a link to any other node
   * `text_value` string - the value or label of this attribute
-    * if the `link_id` is not null, then this value usually is the `name` (displayable title) of the target node
+    * if `link_id` is not null, then this value usually is the `name` (displayable title) of the target node
 
 The columns `node_id`, `attr_id`, `link_id` would be the logical `primary key` for this table - except that it can not be defined as a `primary key` because the `link_id` can be null ([http://www.w3schools.com/sql/sql_primarykey.asp why?])
 
