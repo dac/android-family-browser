@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        android:versionCode="1"
+        android:versionName="1.0"
+        package="ca.chaves.familyBrowser.test">
+    <uses-sdk android:minSdkVersion="4" /> <!-- Android 1.6 is SDK API 4 -->        
+    <application 
+            android:description="@string/app_description"     
+            android:icon="@drawable/icon" 
+            android:label="@string/app_name">
+        <uses-library android:name="android.test.runner" />
+    </application>
+    <instrumentation 
+            android:label="Tests for FamilyBrowser"
+            android:name="android.test.InstrumentationTestRunner"
+            android:targetPackage="ca.chaves.familyBrowser" />
+</manifest> 
