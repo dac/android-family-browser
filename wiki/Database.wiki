@@ -7,7 +7,7 @@ The database is used to store a directed graph, where each "node" (vertice) cont
 
 Please notice that the data stored in this database is a graph instead of a tree because any node can have many parents, not just one
 
-= The source graph file =
+= The source .yaml file =
 
 The graph stored in the database is maintained as a [http://en.wikipedia.org/wiki/Yaml .yaml] source file
 
