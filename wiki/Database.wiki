@@ -59,8 +59,8 @@ The attributes are defined in the `ATTRIBUTES` variable in [http://code.google.c
 This is a sample data:
 || *attr_id* || *attr_hidden* || *attr_value* || _comment_ ||
 || 1 || 1 = True || Name || the "name:" field, it should be hidden since it is already displayed as the node's title ||
-|| 2 || 0 = False || Also known as || "aka:" field in the .yaml file ||
-|| 3 || 0 || Also known as || "aka2:" field ||
+|| 2 || 0 = False || Also known as || the "aka:" field in the .yaml file ||
+|| 3 || 0 || Also known as || the "aka2:" field ||
 
 == The Nodes table ==
 
