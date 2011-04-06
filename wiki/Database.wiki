@@ -5,6 +5,25 @@
 
 The database is used to store a directed graph, where each "node" (vertice) contains a list of key-value attributes, and the "links" (edges) define child-to-parent relationships
 
-The data stored in this database is a graph instead of a tree because any node can have many parents, not just one
+Please notice that the data stored in this database is a graph instead of a tree because any node can have many parents, not just one
 
-= Details =
+= The source graph file =
+
+The graph stored in the database is originally edited as a .yaml file.
+This is a sample node:
+
+{{{
+(Catalina Tuia Pereira,1580):
+    aka: Catalina Tuia
+    aka2: Catalina Pereira
+    gender: F
+    birthdate: '1580'
+    birthplace: Curridabat, Costa Rica
+    partner: (Francisco de Ocampo Golfín,1570)
+    comment: aborigen de Curridabat de la encomienda de Antonio Álvarez Pereira
+}}}
+
+In this node, the `(Catalina Tuia Pereira,1580)` represents the node's unique identifier.  This identifier is in the format `(Person's Full Name,Optional birth date)`.  This sample represents a female (`gender: F`) born in `1580` in `Curridabat, Costa Rica`.  There is a _partner_ship link from this node to the node identified with `(Francisco de Ocampo Golfín,1570)` -- _Catalina Tuia Pereira_ had a child of _Francisco de Ocampo Golfín_
+
+
+
