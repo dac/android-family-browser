@@ -28,8 +28,36 @@ This node represents:
   * a female (`gender: F`)
   * a person born in `1580` (`birthdate: '1580'`)
   * a person born in [http://en.wikipedia.org/wiki/Curridabat Curridabat] (`birthplace: Curridabat, Costa Rica`)
-  * a person _also known as_ "Catalina Tuia"
+  * a person _also known as_ "Catalina Tuia" (`aka: Catalina Tuia`)
   * a person _also known as_ "Catalina Pereira"
-  * a "partner"ship link from this node to the node identified with `(Francisco de Ocampo Golfín,1570)` - the native _Catalina Tuia Pereira_ (1580) gave birth a child of  [http://es.wikipedia.org/wiki/Corregimiento_de_Francisco_de_Ocampo_Golf%C3%ADn Francisco de Ocampo Golfín] (1570)
+  * a "partner"ship link from this node to the node identified with `(Francisco de Ocampo Golfín,1570)` - the native _Catalina Tuia Pereira_ (1580) gave birth to a child of  [http://es.wikipedia.org/wiki/Corregimiento_de_Francisco_de_Ocampo_Golf%C3%ADn Francisco de Ocampo Golfín] (1570)
 
 = The database schema =
+
+The database is made of two tables:
+  * the _attributes_ table, `attr_tab`
+  * the _nodes_ table, `nodes_tab`
+
+== The Attributes table ==
+
+On each node, the attributes are either `key -> value` pairs, or links to other nodes (which also have `key`s and `value`s)
+
+The attributes table defines:
+  * display labels
+  * display order - in which order the attributes are displayed
+  * should this attribute be displayed at all?
+
+This table contains these columns:
+  * `attr_id` integer - unique id, it also defines the display order
+  * `attr_hidden` boolean - true if the attribute must be hidden
+  * `attr_value` string - the attribute label
+
+The attributes are defined in the `ATTRIBUTES` variable in [http://code.google.com/p/android-family-browser/source/browse/trunk/tools/create_familyTree_db.py tools/create_familyTree_db.py]
+
+This is a sample data:
+
+|| *attr_id* || *attr_hidden* || *attr_value* || _comment_ ||
+|| 1 || 1 = True || Name || ||
+|| 2 || 0 = False || Also known as || "aka:" field in .yaml file ||
+|| 3 || 0 || Also known as || "aka2:" field ||
+
