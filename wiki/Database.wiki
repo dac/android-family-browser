@@ -1,6 +1,8 @@
 #summary Describe familyTree.db database
 #labels sqlite3,Featured
 
+<wiki:toc max_depth="4" />
+
 = Introduction =
 
 The database is used to store a directed graph, where each "node" (vertice) contains a list of key-value attributes, and the "links" (edges) define child-to-parent relationships
@@ -97,6 +99,10 @@ This is sample data, produced by `SELECT * FROM nodes_tab WHERE node_id = 100043
 
 All database-access is done asynchronously, using [http://developer.android.com/reference/android/os/AsyncTask.html AsyncTask] instances
 
-In order to synchronize all database-access with the user-interface, the database controller class [http://code.google.com/p/android-family-browser/source/browse/trunk/src/ca/chaves/familyBrowser/database/NodeController.java NodeController] implements a [http://en.wikipedia.org/wiki/Multiple_buffering double-buffer], where all user-interface views use one of these buffers, and all asynchronous database operations use the other one
+In order to synchronize all database-access with the user-interface, the database controller class [http://code.google.com/p/android-family-browser/source/browse/trunk/src/ca/chaves/familyBrowser/database/NodeController.java NodeController] implements a [http://www.usenix.org/events/usenix02/full_papers/huang/huang_html/node8.html double-buffer], where all user-interface views use one of these buffers, and all asynchronous database operations use the other one
 
 When the database operation finishes, both buffers are swapped and the old user-interface buffer becomes available for future database operations
+
+All user-interface controllers are built on top of the `NodeController` class, like the [http://code.google.com/p/android-family-browser/source/browse/trunk/src/ca/chaves/familyBrowser/screens/BrowserScreenController.java BrowserScreenController] class
+
+----
