@@ -9,9 +9,9 @@ Please notice that the data stored in this database is a graph instead of a tree
 
 = The source graph file =
 
-The graph stored in the database is originally edited as a .yaml file.
-This is a sample node:
+The graph stored in the database is maintained as a [http://en.wikipedia.org/wiki/Yaml .yaml] source file
 
+This is a sample node:
 {{{
 (Catalina Tuia Pereira,1580):
     aka: Catalina Tuia
@@ -22,5 +22,14 @@ This is a sample node:
     partner: (Francisco de Ocampo Golfín,1570)
     comment: aborigen de Curridabat de la encomienda de Antonio Álvarez Pereira
 }}}
+where `(Catalina Tuia Pereira,1580)` is the node's unique identifier.  This identifier is in format `(FullName,YYYY)`, where the optional `YYYY` is person's birth date
 
-In this node, the `(Catalina Tuia Pereira,1580)` represents the node's unique identifier.  This identifier is in format `(FullName,YYYY)`.  This sample represents a female (`gender: F`), born in `1580` in [http://en.wikipedia.org/wiki/Curridabat Curridabat] (`birthplace: Curridabat, Costa Rica`).  There is a "partner"ship link from this node to the node identified with `(Francisco de Ocampo Golfín,1570)` - the native _Catalina Tuia Pereira_ (1580) gave birth a child of the [http://es.wikipedia.org/wiki/Corregimiento_de_Francisco_de_Ocampo_Golf%C3%ADn Conquistador] _Francisco de Ocampo Golfín_ (1570)
+This node represents:
+  * a female (`gender: F`)
+  * a person born in `1580` (`birthdate: '1580'`)
+  * a person born in [http://en.wikipedia.org/wiki/Curridabat Curridabat] (`birthplace: Curridabat, Costa Rica`)
+  * a person _also known as_ "Catalina Tuia"
+  * a person _also known as_ "Catalina Pereira"
+  * a "partner"ship link from this node to the node identified with `(Francisco de Ocampo Golfín,1570)` - the native _Catalina Tuia Pereira_ (1580) gave birth a child of  [http://es.wikipedia.org/wiki/Corregimiento_de_Francisco_de_Ocampo_Golf%C3%ADn Francisco de Ocampo Golfín] (1570)
+
+= The database schema =
