@@ -23,7 +23,5 @@ This is a sample node:
     comment: aborigen de Curridabat de la encomienda de Antonio Álvarez Pereira
 }}}
 
-In this node, the `(Catalina Tuia Pereira,1580)` represents the node's unique identifier.  This identifier is in the format `(Person's Full Name,Optional birth date)`.  This sample represents a female (`gender: F`) born in `1580` in `Curridabat, Costa Rica`.  There is a _partner_ship link from this node to the node identified with `(Francisco de Ocampo Golfín,1570)` -- _Catalina Tuia Pereira_ had a child of _Francisco de Ocampo Golfín_
-
-
+In this node, the `(Catalina Tuia Pereira,1580)` represents the node's unique identifier.  This identifier is in the format `(Person's Full Name,Optional birth date)`.  This sample represents a female (`gender: F`) born in `1580` in `Curridabat, Costa Rica`.  There is a "partner"ship link from this node to the node identified with `(Francisco de Ocampo Golfín,1570)` -- _Catalina Tuia Pereira_ had a child of _Francisco de Ocampo Golfín_
 
