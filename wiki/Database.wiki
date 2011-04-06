@@ -7,6 +7,7 @@ The database is used to store a directed graph, where each "node" (vertice) cont
 
 Please notice that the data stored in this database is a graph instead of a tree because any node can have many parents, not just one
 
+----
 = The source .yaml file =
 
 The graph stored in the database is maintained as a [http://en.wikipedia.org/wiki/Yaml .yaml] source file
@@ -32,6 +33,7 @@ This node represents:
   * a person _also known as_ "Catalina Pereira"
   * a "partner"ship link from this node to the node identified with `(Francisco de Ocampo Golfín,1570)` - the native _Catalina Tuia Pereira_ (1580) gave birth to a child of  [http://es.wikipedia.org/wiki/Corregimiento_de_Francisco_de_Ocampo_Golf%C3%ADn Francisco de Ocampo Golfín] (1570)
 
+----
 = The database schema =
 
 The database is made of two tables:
@@ -89,3 +91,12 @@ This is sample data, produced by `SELECT * FROM nodes_tab WHERE node_id = 100043
 || 1000439 || 90 || 1000429 || Gabriel de Aguilar || another child ||
 || 1000439 || 90 || 1000435 || Luisa ? || child of unknown last-name ||
 || 1000439 || 90 || 1000436 || María ? || child of unknown last-name ||
+
+----
+= The database controller =
+
+All database-access is done asynchronously, using [http://developer.android.com/reference/android/os/AsyncTask.html AsyncTask] instances
+
+In order to synchronize all database-access with the user-interface, the database controller class [http://code.google.com/p/android-family-browser/source/browse/trunk/src/ca/chaves/familyBrowser/database/NodeController.java NodeController] implements a [http://en.wikipedia.org/wiki/Multiple_buffering double-buffer], where all user-interface views use one of these buffers, and all asynchronous database operations use the other one
+
+When the database operation finishes, both buffers are swapped and the old user-interface buffer becomes available for future database operations
