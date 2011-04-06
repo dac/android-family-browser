@@ -40,7 +40,7 @@ The database is made of two tables:
 
 == The Attributes table ==
 
-On each node, the attributes are either `key -> value` pairs, or links to other nodes (these links also have `key`s and `value`s associated, where teh `key` represents the link type, like _parent_ link)
+On each node, the attributes are either `key -> value` pairs, or links to other nodes (these links also have `key`s and `value`s associated, where this `key` represents the link type, like _parent_ link)
 
 The attributes table defines:
   * display labels
