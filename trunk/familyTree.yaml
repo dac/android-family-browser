@@ -1,16 +1,18 @@
-#!/usr/bin/env vimen, San José
+#!/usr/bin/env vi
 # coding: utf-8
 #
 # @(#) familyTree.yaml
 #
-# This is the Family Tree's source Database.
+# This file must be in UTF-8 format.
+# It contains the Family Tree's source Database
 #
 # This file is processed by tools/create_familyTree_db.py
 # to create a SQLite3 database familyTree.db
 #
-# Please use the 'Makefile' file to process this file,
-# once you have updated it
+# Please use the 'Makefile' to process this file.
+# Read the 'README.txt' file for more information about
 #
+# @see http://www.yaml.org
 # @see http://pilot.familysearch.org/recordsearch/start.html
 # @see http://wvw.nacion.com/ln_ee/ESPECIALES/raices/descendencia.html
 #
@@ -349,7 +351,7 @@
     birthdate: '1580'
     birthplace: Curridabat, Costa Rica
     partner: (Francisco de Ocampo Golfín,1570)
-    comment: aborigen de Curridabat, originalmente de la encomienda de Antonio Alvarez Pereria; casada con Juan, indio de San Mateo de Chirripó, Tierra Adentro; nunca aprendió a hablar español
+    comment: aborigen de Curridabat, originalmente de la encomienda de Antonio Álvarez Pereira; casada con Juan, indio de San Mateo de Chirripó, Tierra Adentro; nunca aprendió a hablar español
 
 (Gaspar de Rojas González,1593):
     gender: M
@@ -2245,6 +2247,7 @@
     aka: Marta Vargas Morera
     gender: F
     birthdate: '1930-03-27'
+    deathdate: '2011-04-04'
     partner: (William Rojas Rojas,1935)
 
 (William Alberto Rojas Vargas,1964):

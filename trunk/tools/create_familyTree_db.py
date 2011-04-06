@@ -282,7 +282,7 @@ def print_family_tree_summary(family_tree):
     """
         print family_tree summary
     """
-    log_info('Family Tree count:', len(family_tree))
+    log_info('familyTree - node count:', len(family_tree))
     for field in get_family_tree_fields(family_tree):
         log_verbose('Field:', field)
     for key in keys_sorted_by_IDs(family_tree):
@@ -295,6 +295,7 @@ def load_family_tree():
         load the family_tree from the yaml file, and
         fix/update some of the node fields
     """
+    log_info('. loading familyTree data')
     project_dir = get_project_directory()
     family_tree = load_familyTree_dictionary(project_dir)
     for_all_nodes(family_tree, update_node_name)
@@ -333,6 +334,7 @@ def create_android_tables(conn):
     """
        create all sqlite3 tables that Android uses internally
     """
+    log_info('. creating system tables')
     # create android_metadata - this table is needed by Android
     # @see http://www.reigndesign.com/blog/using-your-own-sqlite-database-in-android-applications/
     conn.execute("""
@@ -351,6 +353,7 @@ def create_family_tree_tables(conn):
        remember to update the Java source database/NodeModel.java
        if you change any of the table names or columns
     """
+    log_info('. creating application tables')
     # create tables - these tables have no "_id" column,
     # because we do not use cursor adaptors in Android
     conn.execute("""
@@ -374,6 +377,7 @@ def create_family_tree_indexes(conn):
     """
         create all sqlite3 indexes we use in here
     """
+    log_info('. creating temporary indexes')
     conn.execute("""
         create unique index nodes_idx on
             nodes_tab(node_id, attr_id, link_id);
@@ -393,6 +397,7 @@ def vacuum_family_tree_db(conn):
         and used in here, since the Android application
         really needs a different set of indexes
     """
+    log_info('. cleaning up database')
     conn.commit()
     conn.execute("drop index nodes_idx;")
     conn.execute("drop index nodes_idx2;")
@@ -405,6 +410,7 @@ def populate_attributes_table(conn):
         populate the sqlite3 table containing
         the ATTRIBUTES metadata
     """
+    log_info('. populating "attributes" table')
     curs = conn.cursor()
     attributes_map = {}
     for attribute in ATTRIBUTES:
@@ -424,6 +430,7 @@ def populate_nodes_table(conn, family_tree, attributes_map):
         populate the sqlite3 table containing
         the node data from the family_tree dictionary
     """
+    log_info('. populating "nodes" table')
     curs = conn.cursor()
 
     def attr_id_map(a):
@@ -513,6 +520,7 @@ def populate_children_table(conn, family_tree):
     """
         populate the materialized view containing the children links
     """
+    log_info('. adding "children" links')
     parent_attributes = commize(PARENT_ATTRIBUTES)
     sql_stmt = """
         select A.node_id, A.text_value
@@ -529,6 +537,7 @@ def populate_siblings_table(conn, family_tree):
     """
         populate the materialized view containing the siblings links
     """
+    log_info('. adding "siblings" links')
     parent_attributes = commize(PARENT_ATTRIBUTES)
     sql_stmt = """
         select A.node_id, A.text_value
