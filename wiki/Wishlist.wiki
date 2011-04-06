@@ -1,9 +1,10 @@
 #summary Future features
 
+<wiki:toc max_depth="4" />
+
 These are future _features_:
 
 ----
-
 == Bilingual English/Spanish ==
 
   * [Screenshots]
@@ -20,13 +21,11 @@ These are future _features_:
     * the "attributes" table must include attribute labels in English and Spanish
 
 ----
-
 == Menu: Save Home / Go Home ==
 
   * add a `Menu` option "Save Home", to define the current node to be the starting node for future executions, instead of `Sofía Cristina Chaves Chen` which is what is currently implemented
 
 ----
-
 == Add pictures ==
 
   * add images (pictures/portraits) as node attributes
@@ -35,6 +34,10 @@ These are future _features_:
     * store the images as blobs inside the database, if possible
 
 ----
+== Ad-aware ==
+
+  * display `Ads` in the [Screenshots]
+
 ----
 
 
