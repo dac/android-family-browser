@@ -40,7 +40,7 @@ The database is made of two tables:
 
 == The Attributes table ==
 
-On each node, the attributes are either `key -> value` pairs, or links to other nodes (which also have `key`s and `value`s)
+On each node, the attributes are either `key -> value` pairs, or links to other nodes (these links also have `key`s and `value`s associated, where teh `key` represents the link type, like _parent_ link)
 
 The attributes table defines:
   * display labels
@@ -58,6 +58,5 @@ This is a sample data:
 
 || *attr_id* || *attr_hidden* || *attr_value* || _comment_ ||
 || 1 || 1 = True || Name || ||
-|| 2 || 0 = False || Also known as || "aka:" field in .yaml file ||
+|| 2 || 0 = False || Also known as || "aka:" field in the .yaml file ||
 || 3 || 0 || Also known as || "aka2:" field ||
-
