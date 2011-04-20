@@ -6,6 +6,18 @@
 These are future _features_:
 
 ----
+== Buttons: `[Back]`, `[Exit]` ==
+
+  * there are no `[Back]` nor `[Exit]` buttons
+
+----
+== Search for _Similar Age_ ==
+
+  * add `Search` action, to return all relatives with _similar age_ to the current node
+    * _similar age_ might be +/- 5 or 10 years of age
+    * sort result by `relative distance`
+
+----
 == Bilingual English/Spanish ==
 
   * [Screenshots]
@@ -22,17 +34,17 @@ These are future _features_:
     * the "attributes" table must include attribute labels in English and Spanish
 
 ----
+== Add pictures, audio, video ==
+
+  * add images (pictures/portraits), audio, video as node attributes
+    * images/audio/video might be shared by multiple nodes
+    * images/audio/video might have a label, which might be different on different nodes
+    * store the images/audio/video as blobs inside the database, if possible
+
+----
 == Menu: Save Home / Go Home ==
 
   * add a `Menu` option "Save Home", to define the current node to be the starting node for future executions, instead of `Sofía Cristina Chaves Chen` which is what is currently implemented
-
-----
-== Add pictures ==
-
-  * add images (pictures/portraits) as node attributes
-    * images might be shared by multiple nodes
-    * images might have a label, which might be different on different nodes
-    * store the images as blobs inside the database, if possible
 
 ----
 == Ad-aware ==
