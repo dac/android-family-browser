@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+
+    <string name="back">Back</string>
+    <string name="colon">:</string>
+    <string name="empty"></string>
+    <string name="loading">Loading…</string>
+    <string name="nodata">@string/empty</string>
+
+</resources>

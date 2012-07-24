@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/bookmarks_activate_by_bookmark_menu_item"
+        android:title="@string/bookmarks_activate_by_bookmark_menu_item"/>
+    <item
+        android:id="@+id/bookmarks_edit_by_bookmark_menu_item"
+        android:title="@string/bookmarks_edit_by_bookmark_menu_item"/>
+    <item
+        android:id="@+id/bookmarks_delete_by_bookmark_menu_item"
+        android:title="@string/bookmarks_delete_by_bookmark_menu_item"/>
+
+</menu>

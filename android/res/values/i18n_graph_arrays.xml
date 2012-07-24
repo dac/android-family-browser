@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="graph_edge_names">
+        <item>Parents</item>
+        <item>Partners</item>
+        <item>Children</item>
+        <item>Siblings</item>
+    </string-array>
+    <string-array name="graph_edge_ids">
+        <item>@string/graph_edge_id_parents</item>
+        <item>@string/graph_edge_id_partners</item>
+        <item>@string/graph_edge_id_children</item>
+        <item>@string/graph_edge_id_siblings</item>
+    </string-array>
+
+</resources>

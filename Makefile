@@ -5,235 +5,133 @@
 #
 # USAGE
 #
-#   shell>  export PATH="$PATH:/path-to-android-sdk/tools"
-#   shell>  export PATH="$PATH:$JAVA_HOME/bin"
-#   shell>  make all
+#   export PATH="$PATH:/path-to-android-sdk/tools"
+#   export PATH="$PATH:$JAVA_HOME/bin"
 #
-#   shell>  make start-emulator
+#   make all
 #
-#   shell>  make install-release
-#   shell>  make install-debug		# optional
-#
-#   shell>  make run-tests
-#   shell>  make run-monkey
+#   make release
+#   make debug          # optional
 #
 # DESCRIPTION
 #
-# We use this file in order to:
+#   We use this file in order to:
 #
-#   1. generate the sqlite database from yaml source
-#   2. build Android binary packages
+#     1. generate the sqlite database from yaml source
+#     2. build Android binary packages
 #
-# You can use Eclipse to do (2.), but
-# you still need to use this Makefile to do (1.) in Linux
+#   You can use Eclipse to do (2.), but
+#   you still need to use this Makefile to do (1.) in Linux
 #
 # RUNNING THE COMMAND-LINE ANDROID EMULATOR
 #
-# Create an Android device with name "FamilyBrowser_avd":
-#   shell>  android
-#   # goto Virtual Devices > New
-#   # create new device FamilyBrowser_avd for Platform 1.6
-# Start the Android emulator:
-#   shell>  emulator -avd FamilyBrowser_avd &
-#   # creates a window with title "5554:FamilyBrowser_avd"
-# Install bin/FamilyBrowser-debug.apk into the running emulator:
-#   shell>  adb install bin/FamilyBrowser-debug.apk
+#   Create an Android device with name "FamilyBrowser_avd":
+#     shell>  android
+#     # goto Virtual Devices > New
+#     # create new device FamilyBrowser_avd for Platform 1.6
+#   Start the Android emulator:
+#     shell>  emulator -avd FamilyBrowser_avd &
+#     # creates a window with title "5554:FamilyBrowser_avd"
+#   Install $(APK_DIRECTORY)/FamilyBrowser-debug.apk into the emulator:
+#     shell>  adb install $(APK_DIRECTORY)/FamilyBrowser-debug.apk
 #
 
-MAIN_NAME := FamilyBrowser
-MAIN_PACKAGE := ca.chaves.familyBrowser
-MAIN_SOURCES := $(wildcard src/*/*/*/*/*.java) $(wildcard res/*/*.xml)
+_DROID_APP_NAME ?= FamilyBrowser
+_DROID_APP_PACKAGE ?= ca.chaves.familyBrowser
+_DROID_APP_VERSION ?= 2
 
-TEST_NAME := $(MAIN_NAME)Test
-TEST_PACKAGE := $(MAIN_PACKAGE).test
-TEST_SOURCES := $(wildcard test/src/*/*/*/*/*/*.java) $(wildcard test/res/*/*.xml)
+_DROID_APP_KEYSTORE ?= share/certs/$(_DROID_APP_NAME).keystore
+
+_DROID_TEST_NAME := $(_DROID_APP_NAME)Test
+_DROID_TEST_PACKAGE := $(_DROID_APP_PACKAGE).test
 
 # id 4 = Android 1.6 (API level 4)
-# use `android list targets` to see which APIs are available
-ANDROID_TARGET_ID := 4
+_DROID_SDK_VERSION ?= 4
 
-# ensure that all alphabetic sorts produce same results elsewhere
-LANG := C
-LC_ALL := C
-export LANG LC_ALL
+# where the final .apk files are created (inside test/, main/)
+# Ant will use "build/", Eclipse will use "bin/"
+#APK_DIRECTORY := build
+APK_DIRECTORY := bin
 
 #--------------------------------------- phony targets
 
 all : release debug
-	@ls -l bin/$(MAIN_NAME).apk test/bin/$(TEST_NAME).apk
-	@ls -l bin/$(MAIN_NAME)-debug.apk test/bin/$(TEST_NAME)-debug.apk
+
+clean :
+	bash share/tools/build_app.bash clean
+
+clobber :
+	bash share/tools/build_app.bash clobber
 
 # build a debug package
 debug : \
-    bin/$(MAIN_NAME)-debug.apk \
-    test/bin/$(TEST_NAME)-debug.apk
+    main/$(APK_DIRECTORY)/$(_DROID_APP_NAME)-debug.apk \
+    test/$(APK_DIRECTORY)/$(_DROID_TEST_NAME)-debug.apk
 
-# build a release signed package
+# build a release package
 release : \
-    bin/$(MAIN_NAME).apk \
-    test/bin/$(TEST_NAME).apk
+    main/$(APK_DIRECTORY)/$(_DROID_APP_NAME)-release.apk \
+    test/$(APK_DIRECTORY)/$(_DROID_TEST_NAME)-release.apk
+	@cp -f main/$(APK_DIRECTORY)/$(_DROID_APP_NAME)-release.apk $(_DROID_APP_NAME).apk
+	@echo "Upload $(_DROID_APP_NAME).apk to https://market.android.com/details?id=ca.chaves.familyBrowser"
 
-# remove all intermediate files
-clean :
-	-rm -fr bin/* gen/*
-	-rm -fr test/bin/* test/gen/*
-	-find . -name \*~ -o -name \*.pyc -o -name [1xyz] | xargs -r rm
+.PHONY : all debug release clean clobber
 
-# clobber Ant files
-clobber-ant : clean
-	-rm -f  build.xml local.properties
-	-rm -f  test/build.xml test/local.properties
+#--------------------------------------- generated sources
 
-# clobber Eclipse files
-clobber-eclipse : clean
-	-rm -fr .settings test/.settings
+sources : \
+    android/jni/ca_chaves_android_util_POSIX.hpp
 
-# clobber signing files
-clobber-keystore : clean
-	-rm -f  $(MAIN_NAME).keystore
-
-# clobber files
-clobber : clobber-ant clobber-eclipse
-	-rm -f  res/raw/family_tree_db_*
-	-rm -f  familyTree.db
+android/jni/ca_chaves_android_util_POSIX.hpp : debug
+	javah -classpath android/bin/classes/ \
+	    -o android/jni/ca_chaves_android_util_POSIX.hpp \
+	    ca.chaves.android.util.POSIX
 
 # remove trailing blanks - I do not like them
 remove-trailing-blanks :
-	sed -i -e "s/\s*$$//" Makefile $(MAIN_SOURCES) $(TEST_SOURCES) *.txt *.xml *.yaml */*.py
+	sed -i -e "s/\s*$$//" Makefile
+	find . \
+	    -name \*.java	\
+	    -o -name \*.xml	\
+	    -o -name \*.yaml	\
+	    -o -name \*.py	\
+	    -o -name \*.txt	\
+	    | xargs -r sed -i -e "s/\s*$$//"
 
-.PHONY : all debug release clean clobber
-.PHONY : clobber-ant clobber-eclipse clobber-keystore
-.PHONY : remove-trailing-blanks
-
-#--------------------------------------- android targets
-
-# create android device
-$(HOME)/.android/avd/Android$(ANDROID_TARGET_ID)_avd.ini :
-	android create avd -t $(ANDROID_TARGET_ID) -n "Android$(ANDROID_TARGET_ID)_avd" -f
-	android list avd
-
-# start android emulator
-start-emulator : \
-    $(HOME)/.android/avd/Android$(ANDROID_TARGET_ID)_avd.ini
-	emulator -avd "Android$(ANDROID_TARGET_ID)_avd" &
-	sleep 3 && adb wait-for-device
-
-# install debug package - it requires an emulator running
-install-debug : \
-    bin/$(MAIN_NAME)-debug.apk \
-    test/bin/$(TEST_NAME)-debug.apk \
-    $(HOME)/.android/avd/Android$(ANDROID_TARGET_ID)_avd.ini
-	-adb uninstall $(TEST_PACKAGE)
-	-adb uninstall $(MAIN_PACKAGE)
-	adb install bin/$(MAIN_NAME)-debug.apk
-	adb install test/bin/$(TEST_NAME)-debug.apk
-
-# install release package - it requires an emulator running
-install-release : \
-    bin/$(MAIN_NAME).apk \
-    test/bin/$(TEST_NAME).apk \
-    $(HOME)/.android/avd/Android$(ANDROID_TARGET_ID)_avd.ini
-	-adb uninstall $(TEST_PACKAGE)
-	-adb uninstall $(MAIN_PACKAGE)
-	adb install bin/$(MAIN_NAME).apk
-	adb install test/bin/$(TEST_NAME).apk
-
-# run test package - it requires an emulator running
-run-tests :
-	adb shell am instrument -w $(TEST_PACKAGE)/android.test.InstrumentationTestRunner
-
-# run android logcat - it requires an emulator running
-run-logcat :
-	adb logcat 2>&1 | tee logcat.txt
-
-# run http://developer.android.com/guide/developing/tools/monkey.html
-run-monkey :
-	adb shell monkey -p $(MAIN_PACKAGE) -v 1000
-
-.NOTPARALLEL : install-debug install-release
-.PHONY : start-emulator install-debug install-release run-tests run-logcat run-monkey
+.PHONY : sources remove-trailing-blanks
 
 #--------------------------------------- file targets
 
-# sign .apk target
-# NOTE: this macro assumes that $@ is a .apk filename, like $@ = FILENAME.apk, and
-#       that this macro is used right after executing Ant, which builds a temporary
-#       file FILENAME-unsigned.apk
-define SIGN_APK_TARGET
-	if [ -s $@ ] ; then rm -f $@ ; fi
-	# sign the unsigned package
-	jarsigner -keystore $(MAIN_NAME).keystore \
-		-signedjar $(subst .apk,-signed.apk,$@) $(subst .apk,-unsigned.apk,$@) \
-		$(MAIN_NAME)_key
-	# postprocess the signed package
-	zipalign 4 $(subst .apk,-signed.apk,$@) $@
-	# verify signature in the final target
-	jarsigner -verify $@
-endef # SIGN_APK_TARGET
+main/build.xml main/project.properties main/local.properties \
+test/build.xml test/project.properties test/local.properties :
+	bash share/tools/build_app.bash init
+
+main/$(APK_DIRECTORY)/$(_DROID_APP_NAME)-release.apk \
+test/$(APK_DIRECTORY)/$(_DROID_TEST_NAME)-release.apk : \
+    $(_DROID_APP_KEYSTORE) \
+    main/tarball/databases/v$(_DROID_APP_VERSION).db
+	bash share/tools/build_app.bash release
+
+main/$(APK_DIRECTORY)/$(_DROID_APP_NAME)-debug.apk \
+test/$(APK_DIRECTORY)/$(_DROID_TEST_NAME)-debug.apk : \
+    $(_DROID_APP_KEYSTORE) \
+    main/tarball/databases/v$(_DROID_APP_VERSION).db
+	bash share/tools/build_app.bash debug
 
 # process familyTree.yaml
-familyTree.db : familyTree.yaml tools/create_familyTree_db.py
-	python tools/create_familyTree_db.py
-
-# split the database file into pieces smaller than 1Mb
-res/raw/family_tree_db_0 \
-res/raw/family_tree_db_1 \
-res/raw/family_tree_db_2 \
-res/raw/family_tree_db_3 \
-res/raw/family_tree_db_4 \
-res/raw/family_tree_db_5 \
-res/raw/family_tree_db_6 \
-res/raw/family_tree_db_7 \
-: familyTree.db
-	python tools/split.py -i familyTree.db -o res/raw/family_tree_db_ -n 8
-	@ls -l res/raw/family_tree_db_*
-
-# generate Ant files - main project
-build.xml local.properties : res/raw/family_tree_db_0
-	android update project -t $(ANDROID_TARGET_ID) -n "$(MAIN_NAME)" -p .
-
-# generate Ant files - test project
-test/build.xml test/local.properties : build.xml local.properties
-	cd test && android update project -t $(ANDROID_TARGET_ID) -n "$(TEST_NAME)" -p .
-
-# build the main debug package
-bin/$(MAIN_NAME)-debug.apk : build.xml $(MAIN_SOURCES)
-	# activate calls to Log methods in the source code
-	sed --in-place -e "s/= false;/= true;/" src/ca/chaves/familyBrowser/helpers/Log.java
-	-find src res -name \*~ | xargs -r rm
-	# run Ant to build bin/$(MAIN_NAME)-debug.apk
-	ant debug
-
-# build the test debug package
-test/bin/$(TEST_NAME)-debug.apk : bin/$(MAIN_NAME)-debug.apk test/build.xml $(TEST_SOURCES)
-	# run Ant to build test/bin/$(TEST_NAME)-debug.apk
-	cd test && ant debug
-
-# build the main release signed package
-bin/$(MAIN_NAME).apk : build.xml $(MAIN_NAME).keystore $(MAIN_SOURCES)
-	# deactivate any calls to Log methods in the source code
-	sed --in-place -e "s/= true;/= false;/" src/ca/chaves/familyBrowser/helpers/Log.java
-	-find src res -name \*~ | xargs -r rm
-	# build the release package
-	ant release
-	$(SIGN_APK_TARGET)
-
-# build the test release signed package
-test/bin/$(TEST_NAME).apk : bin/$(MAIN_NAME).apk test/build.xml $(MAIN_NAME).keystore $(TEST_SOURCES)
-	# build the release package
-	cd test && ant release
-	$(SIGN_APK_TARGET)
+main/tarball/databases/v$(_DROID_APP_VERSION).db : \
+    familyTree.yaml \
+    share/tools/familyTree_yaml.py
+	bash share/tools/build_app.bash database
 
 # create keystore for signing release packages
-$(MAIN_NAME).keystore :
-	# generate signing keys
-	keytool -genkey -v \
-		-keystore $(MAIN_NAME).keystore -alias $(MAIN_NAME)_key \
-		-keyalg RSA -keysize 2048 -validity 20000 \
-		-dname "CN=David Chaves, OU=Chaves-Trejos Family, O=Costa Rica, L=Vancouver, ST=BC, C=CA"
+$(_DROID_APP_KEYSTORE) :
+	bash share/tools/build_app.bash keystore
 
 .NOTPARALLEL : \
-    bin/$(MAIN_NAME)-debug.apk bin/$(MAIN_NAME).apk \
-    test/bin/$(TEST_NAME)-debug.apk test/bin/$(TEST_NAME).apk
+    main/$(APK_DIRECTORY)/$(_DROID_APP_NAME)-debug.apk \
+    main/$(APK_DIRECTORY)/$(_DROID_APP_NAME)-release.apk \
+    test/$(APK_DIRECTORY)/$(_DROID_TEST_NAME)-debug.apk \
+    test/$(APK_DIRECTORY)/$(_DROID_TEST_NAME)-release.apk
 
 #--------------------------------------- The End

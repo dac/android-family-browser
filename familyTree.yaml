@@ -6,8 +6,8 @@
 # This file must be in UTF-8 format.
 # It contains the Family Tree's source Database
 #
-# This file is processed by tools/create_familyTree_db.py
-# to create a SQLite3 database familyTree.db
+# This file is processed by share/tools/familyTree.yaml
+# to create the SQLite3 database to be used by this application.
 #
 # Please use the 'Makefile' to process this file.
 # Read the 'README.txt' file for more information about
@@ -1066,7 +1066,7 @@
     mother: (Lila Sánchez Rojas,1905)
     father: (Jovel Paulino del Espiritu Santo Rojas Soto,1898)
 
-(Bernardo Alberto de Las Piedades Rojas Soto,1900):
+(Bernardo Alberto de las Piedades Rojas Soto,1900):
     gender: M
     aka: Alberto Rojas Soto
     aka2: Beto Rojas
@@ -1079,7 +1079,7 @@
     partner: (Herminia Rojas Sánchez,1906)
     weddingdate: '1924-05-24'
     weddingplace: Iglesia de San Rafael, Atenas, Alajuela
-    partner2: (Ynés Berta de Las Piedades Trejos Calvo,1911)
+    partner2: (Ynés Berta de las Piedades Trejos Calvo,1911)
 
 (Herminia Rojas Sánchez,1906):
     gender: F
@@ -1089,76 +1089,89 @@
     deathplace: San Isidro, Montes de Oro, Punterenas
     mother: (Juana María Sánchez)
     father: (Fulgencio Rojas Rojas)
-    partner: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    partner: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     weddingdate: '1924-05-24'
     weddingplace: Iglesia de San Rafael, Atenas, Alajuela
 
-(Ynés Berta de Las Piedades Trejos Calvo,1911):
+(Ynés Berta de las Piedades Trejos Calvo,1911):
     gender: F
     aka: Berta Trejos Calvo
     birthdate: '1911-07-04'
     birthplace: Tacares, Grecia, Alajuela, Costa Rica
     deathdate: '1952-03-12'
     deathplace: Miramar, Montes de Oro, Puntarenas, Costa Rica
-    mother: (Eusebia Calvo Barrantes)
+    mother: (Eusebia de Jesús Calvo Barrantes)
     father: (Rafael Trejos Hernández)
     partner: (José García Rodríguez)
     weddingdate: '1932-02-06'
     weddingplace: Puntarenas, Puntarenas, Costa Rica
-    partner2: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    partner2: (Bernardo Alberto de las Piedades Rojas Soto,1900)
 
 (José García Rodríguez):
     gender: M
-    partner: (Ynés Berta de Las Piedades Trejos Calvo,1911)
+    partner: (Ynés Berta de las Piedades Trejos Calvo,1911)
 
 (Rafael Trejos Hernández):
     gender: M
-    partner: (Eusebia Calvo Barrantes)
+    partner: (Eusebia de Jesús Calvo Barrantes)
 
-(Eusebia Calvo Barrantes):
+(Eusebia de Jesús Calvo Barrantes):
     gender: F
+    aka: Eusebia Calvo Barrantes
+    baptismdate: 1869-03-05
+    baptismplace: Alajuela, Alajuela, Costa Rica
     partner: (Rafael Trejos Hernández)
+    mother: (Aurora Barrantes)
+    father: (Rafael Calvo)
 
-(Moisés Cecilio de Jesus Trejos Calvo,1888):
+(Aurora Barrantes):
+    gender: F
+    partner: (Rafael Calvo)
+
+(Rafael Calvo):
+    gender: M
+    partner: (Aurora Barrantes)
+
+(Moisés Cecilio de Jesús Trejos Calvo,1888):
     gender: M
     birthdate: '1888'
     birthplace: Naranjo, Alajuela, Costa Rica
-    mother: (Eusebia Calvo Barrantes)
+    mother: (Eusebia de Jesús Calvo Barrantes)
     father: (Rafael Trejos Hernández)
 
 (Manuel Felipe de Jesús Calvo Trejos,1890):
     gender: M
     birthdate: '1890'
     birthplace: Naranjo, Alajuela, Costa Rica
-    mother: (Eusebia Calvo Barrantes)
+    mother: (Eusebia de Jesús Calvo Barrantes)
     father: (Rafael Trejos Hernández)
 
 (José León Trejos Calvo,1892):
     gender: M
     birthdate: '1892'
     birthplace: Naranjo, Alajuela, Costa Rica
-    mother: (Eusebia Calvo Barrantes)
+    mother: (Eusebia de Jesús Calvo Barrantes)
     father: (Rafael Trejos Hernández)
 
-(Julia Ramana Trejos Calvo,1895):
+(Julia Romana Trejos Calvo,1895):
     gender: F
     birthdate: '1895'
     birthplace: Grecia, Alajuela, Costa Rica
-    mother: (Eusebia Calvo Barrantes)
+    mother: (Eusebia de Jesús Calvo Barrantes)
     father: (Rafael Trejos Hernández)
 
 (Ascención Ramón Trejos Calvo,1897):
     gender: M
     birthdate: '1897'
     birthplace: Grecia, Alajuela, Costa Rica
-    mother: (Eusebia Calvo Barrantes)
+    mother: (Eusebia de Jesús Calvo Barrantes)
     father: (Rafael Trejos Hernández)
 
-(Maura Generosa de Las Piedades Trejos Calvo,1900):
+(Maura Generosa de las Piedades Trejos Calvo,1900):
     gender: F
     birthdate: '1900'
     birthplace: Grecia, Alajuela, Costa Rica
-    mother: (Eusebia Calvo Barrantes)
+    mother: (Eusebia de Jesús Calvo Barrantes)
     father: (Rafael Trejos Hernández)
 
 (Paula Trejos Calvo,1901):
@@ -1166,21 +1179,21 @@
     birthdate: '1901'
     deathdate: '1902-02-21'
     deathplace: Grecia, Alajuela, Costa Rica
-    mother: (Eusebia Calvo Barrantes)
+    mother: (Eusebia de Jesús Calvo Barrantes)
     father: (Rafael Trejos Hernández)
 
-(Justa Generosa de Las Piedades Trejos Calvo,1903):
+(Justa Generosa de las Piedades Trejos Calvo,1903):
     gender: F
     birthdate: '1903'
     deathplace: Grecia, Alajuela, Costa Rica
-    mother: (Eusebia Calvo Barrantes)
+    mother: (Eusebia de Jesús Calvo Barrantes)
     father: (Rafael Trejos Hernández)
 
 (Emiliana Vicenta Trejos y Calvo,1906):
     gender: F
     birthdate: '1906'
     deathplace: Grecia, Alajuela, Costa Rica
-    mother: (Eusebia Calvo Barrantes)
+    mother: (Eusebia de Jesús Calvo Barrantes)
     father: (Rafael Trejos Hernández)
 
 (Juana María Sánchez):
@@ -1196,7 +1209,7 @@
     birthdate: '1925-03-30'
     deathdate: '2011-03-18'
     mother: (Herminia Rojas Sánchez,1906)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Víctor Manuel Garro Arias,1916)
 
 (Víctor Manuel Garro Arias,1916):
@@ -1660,7 +1673,7 @@
     birthdate: '1926-06-18'
     deathdate: '1999-02-11'
     mother: (Herminia Rojas Sánchez,1906)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Uriel Vargas Montero,1920)
 
 (Uriel Vargas Montero,1920):
@@ -1675,7 +1688,7 @@
     gender: F
     birthdate: '1927-10-24'
     mother: (Herminia Rojas Sánchez,1906)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Guillermina Victoria Pérez Elizondo,1934)
 
 (Guillermina Victoria Pérez Elizondo,1934):
@@ -1988,7 +2001,7 @@
     gender: F
     birthdate: '1929-07-21'
     mother: (Herminia Rojas Sánchez,1906)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Ricardo Bogantes Rojas,1925)
 
 (Ricardo Bogantes Rojas,1925):
@@ -2043,14 +2056,14 @@
     gender: F
     birthdate: '1931'
     mother: (Herminia Rojas Sánchez,1906)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
 
 (Gema Rojas Rojas,1933):
     gender: F
     birthdate: '1933-04-24'
     deathdate: '1983-07-27'
     mother: (Herminia Rojas Sánchez,1906)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Roberto Didier Quesada Gómez,1930)
 
 (Roberto Didier Quesada Gómez,1930):
@@ -2240,7 +2253,7 @@
     gender: F
     birthdate: '1935-03-02'
     mother: (Herminia Rojas Sánchez,1906)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Marta del Rosario Vargas Morera,1930)
 
 (Marta del Rosario Vargas Morera,1930):
@@ -2311,7 +2324,7 @@
     gender: F
     birthdate: '1937-10-10'
     mother: (Herminia Rojas Sánchez,1906)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Víctor Manuel Campos Sandoval,1937)
 
 (Víctor Manuel Campos Sandoval,1937):
@@ -2574,8 +2587,8 @@
     aka: Doris Trejos Calvo
     gender: F
     birthdate: '1939-12-29'
-    mother: (Ynés Berta de Las Piedades Trejos Calvo,1911)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    mother: (Ynés Berta de las Piedades Trejos Calvo,1911)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Manuel Chaves Rodríguez,1934)
 
 (Manuel Chaves Rodríguez,1934):
@@ -2881,14 +2894,15 @@
 (Eddy Chaves Trejos,1973):
     gender: M
     birthdate: '1973-10-28'
+    deathdate: '2012-02-06'
     mother: (Doris de las Piedades Trejos Calvo,1939)
     father: (Manuel Chaves Rodríguez,1934)
 
 (Nelly Trejos Calvo,1941):
     gender: F
     birthdate: '1941-12-31'
-    mother: (Ynés Berta de Las Piedades Trejos Calvo,1911)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    mother: (Ynés Berta de las Piedades Trejos Calvo,1911)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Santiago Fonseca Guerrero,1941)
 
 (Santiago Fonseca Guerrero,1941):
@@ -2997,7 +3011,7 @@
     mother: (Giselle Fonseca Trejos,1964)
     father: (Óscar Rojas Cubero,1961)
 
-(Leidy Fonseca Trejos,1967):
+(Leidy María Fonseca Trejos,1967):
     gender: F
     birthdate: '1967-07-21'
     birthplace: Alajuela, Alajuela
@@ -3013,7 +3027,7 @@
     birthplace: Heredia, Heredia
     mother: (Gladys Montero Montero)
     father: (Rodrigo Solano Guillén)
-    partner: (Leidy Fonseca Trejos,1967)
+    partner: (Leidy María Fonseca Trejos,1967)
     weddingdate: '1998-12-17'
     weddingplace: Iglesia de Nuestra Señora del Sagrado Corazón, Anselmo Llorente, Tibás, San José
 
@@ -3029,14 +3043,14 @@
     gender: M
     birthdate: '1989-07-09'
     birthplace: La Uruca, San José
-    mother: (Leidy Fonseca Trejos,1967)
+    mother: (Leidy María Fonseca Trejos,1967)
     father: (Mario Alberto Solano Montero,1964)
 
 (Abethsely Auxiliadora Solano Fonseca,1993):
     gender: F
     birthdate: '1993-11-05'
     birthplace: La Uruca, San José
-    mother: (Leidy Fonseca Trejos,1967)
+    mother: (Leidy María Fonseca Trejos,1967)
     father: (Mario Alberto Solano Montero,1964)
 
 (Neysi Fonseca Trejos,1970):
@@ -3205,8 +3219,8 @@
     aka: Lucía Trejos Calvo
     birthdate: '1943-07-06'
     birthplace: Miramar, Puntarenas, Costa Rica
-    mother: (Ynés Berta de Las Piedades Trejos Calvo,1911)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    mother: (Ynés Berta de las Piedades Trejos Calvo,1911)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Modesto Rosario de Jesús Chaves Rodríguez,1942)
 
 (Modesto Rosario de Jesús Chaves Rodríguez,1942):
@@ -3226,13 +3240,13 @@
     birthdate: '1902-10-25'
     birthplace: Centro Santo Domingo, Heredia
     deathdate: '1977-04-12'
-    mother: (María Feliz de Las Mercedes Zamora,1886)
+    mother: (María Feliz de las Mercedes Zamora,1886)
     father: (Juan Lorenzo Rodríguez)
     partner: (Filadelfo Belarmino de Jesús Chaves Villegas,1898)
     weddingdate: '1919-06-07'
     weddingplace: Atenas, Alajuela, Costa Rica
 
-(María Feliz de Las Mercedes Zamora,1886):
+(María Feliz de las Mercedes Zamora,1886):
     aka: Mercedes Zamora
     gender: F
     birthdate: '1886'
@@ -3251,7 +3265,7 @@
 
 (Juan Lorenzo Rodríguez):
     gender: M
-    partner: (María Feliz de Las Mercedes Zamora,1886)
+    partner: (María Feliz de las Mercedes Zamora,1886)
 
 (Filadelfo Belarmino de Jesús Chaves Villegas,1898):
     aka: Filadelfo Chaves Villegas
@@ -3259,25 +3273,75 @@
     gender: M
     birthdate: '1898-09-07'
     mother: (María Villegas)
-    father: (Antonio Chaves,1870)
+    father: (Antonio Chaves Rodríguez,1871)
     partner: (María Felicidad Celia de los Dolores Rodríguez Zamora,1902)
     weddingdate: '1919-06-07'
     weddingplace: Atenas, Alajuela, Costa Rica
 
+(Maria Cesilia Chavez Villegas):
+    gender: F
+    baptismdate: 1919-09-10
+    baptismplace: Atenas, Alajuela, Costa Rica
+    mother: (María Villegas)
+    father: (Antonio Chaves Rodríguez,1871)
+
+(Cesilio de Jesús Chavez Villegas):
+    gender: M
+    baptismdate: 1919-09-10
+    baptismplace: Atenas, Alajuela, Costa Rica
+    mother: (María Villegas)
+    father: (Antonio Chaves Rodríguez,1871)
+
+(Noe Víctor Manuel Chávez Y Villegas):
+    gender: M
+    baptismdate: 1922-06-18
+    baptismplace: Atenas, Alajuela, Costa Rica
+    mother: (María Villegas)
+    father: (Antonio Chaves Rodríguez,1871)
+
 (María Villegas):
     gender: F
-    partner: (Antonio Chaves,1870)
+    partner: (Antonio Chaves Rodríguez,1871)
     weddingdate: '1895-09-18'
     weddingplace: Iglesia de San Rafael, Atenas, Alajuela, Costa Rica
 
-(Antonio Chaves,1870):
+# Antonio Chaves Rodríguez nació en 1871 en Santo Domingo de Heredia, hijo de
+# Jesús Chaves Alvarado y Juana Rodríguez Zamora. Jesús Chaves Alvarado hijo de
+# Manuel Chaves e Isabel Alvarado Barquero. Manuel Chaves hijo de Javiera
+# Chaves
+(Antonio Chaves Rodríguez,1871):
     gender: M
-    birthdate: 1870
+    birthdate: 1871
+    birthplace: Santo Domingo de Heredia
     partner: (María Villegas)
+    mother: (Juana Rodríguez Zamora)
+    father: (Jesús Chaves Alvarado)
     weddingdate: '1895-09-18'
     weddingplace: Iglesia de San Rafael, Atenas, Alajuela, Costa Rica
 
-(María Adilia de Las Mercedes Chaves Rodríguez,1920):
+(Juana Rodríguez Zamora):
+    gender: F
+    partner: (Jesús Chaves Alvarado)
+
+(Jesús Chaves Alvarado):
+    gender: M
+    mother: (Isabel Alvarado Barquero)
+    father: (Manuel Chaves)
+    partner: (Juana Rodríguez Zamora)
+
+(Manuel Chaves):
+    gender: M
+    mother: (Javiera Chaves)
+    partner: (Isabel Alvarado Barquero)
+
+(Isabel Alvarado Barquero):
+    gender: F
+    partner: (Manuel Chaves)
+
+(Javiera Chaves):
+    gender: F
+
+(María Adilia de las Mercedes Chaves Rodríguez,1920):
     aka: Adilia Chaves Rodríguez
     gender: F
     birthdate: '1920-04-16'
@@ -3336,6 +3400,7 @@
     aka: Álvaro Chaves Rodríguez
     gender: M
     birthdate: '1936-08-09'
+    deathdate: '2011-09-04'
     mother: (María Felicidad Celia de los Dolores Rodríguez Zamora,1902)
     father: (Filadelfo Belarmino de Jesús Chaves Villegas,1898)
 
@@ -3448,16 +3513,16 @@
     gender: M
     birthdate: '1944-10-13'
     deathdate: '1948-01-07'
-    mother: (Ynés Berta de Las Piedades Trejos Calvo,1911)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    mother: (Ynés Berta de las Piedades Trejos Calvo,1911)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
 
 (Rigoberto Juan del Socorro Trejos Calvo,1946):
     aka: Rigoberto Trejos Calvo
     aka2: Rigo Trejos
     gender: M
     birthdate: '1946-02-04'
-    mother: (Ynés Berta de Las Piedades Trejos Calvo,1911)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    mother: (Ynés Berta de las Piedades Trejos Calvo,1911)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Leticia Miranda Delgado,1945)
 
 (Leticia Miranda Delgado,1945):
@@ -3483,6 +3548,13 @@
     mother: (Leticia Miranda Delgado,1945)
     father: (Rigoberto Juan del Socorro Trejos Calvo,1946)
     partner: (Víctor Julio Oconitrillo Bogantes,1969)
+
+(Luzmery Trejos Miranda):
+    gender: F
+    deathdate: '2011-08-23'
+    deathplace: Atenas, Alajuela
+    mother: (Leticia Miranda Delgado,1945)
+    father: (Rigoberto Juan del Socorro Trejos Calvo,1946)
 
 (Víctor Julio Oconitrillo Bogantes,1969):
     gender: M
@@ -3510,8 +3582,8 @@
     aka: Betty Vargas Rojas
     gender: F
     birthdate: '1949-07-03'
-    mother: (Ynés Berta de Las Piedades Trejos Calvo,1911)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    mother: (Ynés Berta de las Piedades Trejos Calvo,1911)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
     partner: (Adolfo Villalobos Romero,1946)
 
 (Adolfo Villalobos Romero,1946):
@@ -3632,6 +3704,7 @@
     gender: M
     birthdate: '1969-09-27'
     birthplace: Distrito Hospital, San José
+    deathdate: '2011-11-01'
     mother: (Leonor Acuña Aráuz)
     father: (Álvaro Saborío Mora)
     partner: (Sandra Patricia Villalobos Vargas,1969)
@@ -3702,8 +3775,8 @@
     birthplace: Miramar, Montes de Oro, Puntarenas
     deathdate: '1952-03-12'
     deathplace: Miramar, Montes de Oro, Puntarenas
-    mother: (Ynés Berta de Las Piedades Trejos Calvo,1911)
-    father: (Bernardo Alberto de Las Piedades Rojas Soto,1900)
+    mother: (Ynés Berta de las Piedades Trejos Calvo,1911)
+    father: (Bernardo Alberto de las Piedades Rojas Soto,1900)
 
 (Oliva Fermina de los Ángeles Rojas Soto,1901):
     gender: F
@@ -3787,7 +3860,7 @@
     mother: (Ana María Quesada Cascante,1915)
     father: (Juan Bautista Ramón Rojas Soto,1903)
 
-(Oliva Trinidad de Las Piedades Rojas Soto,1904):
+(Oliva Trinidad de las Piedades Rojas Soto,1904):
     gender: F
     aka: Oliva Rojas Soto
     birthdate: '1904-11-12'
@@ -3806,7 +3879,7 @@
     birthplace: Mercedes, Heredia
     mother: (Emilia Víquez Ugalde)
     father: (Alberto Arguedas Mejías)
-    partner: (Oliva Trinidad de Las Piedades Rojas Soto,1904)
+    partner: (Oliva Trinidad de las Piedades Rojas Soto,1904)
     weddingdate: '1924-05-17'
     weddingplace: Iglesia de San Rafael, Atenas, Alajuela
 
@@ -3822,58 +3895,58 @@
     gender: F
     birthdate: '1925-03-15'
     deathdate: '2007-06-01'
-    mother: (Oliva Trinidad de Las Piedades Rojas Soto,1904)
+    mother: (Oliva Trinidad de las Piedades Rojas Soto,1904)
     father: (Juan Arguedas Víquez,1902)
 
 (Jorge Arguedas Rojas,1926):
     gender: M
     birthdate: '1926-04-11'
-    mother: (Oliva Trinidad de Las Piedades Rojas Soto,1904)
+    mother: (Oliva Trinidad de las Piedades Rojas Soto,1904)
     father: (Juan Arguedas Víquez,1902)
 
 (Noé Arguedas Rojas,1927):
     gender: M
     birthdate: '1927-09-12'
-    mother: (Oliva Trinidad de Las Piedades Rojas Soto,1904)
+    mother: (Oliva Trinidad de las Piedades Rojas Soto,1904)
     father: (Juan Arguedas Víquez,1902)
 
 (Ismael Arguedas Rojas,1929):
     gender: M
     birthdate: '1929-10-22'
     deathdate: '1967-04-16'
-    mother: (Oliva Trinidad de Las Piedades Rojas Soto,1904)
+    mother: (Oliva Trinidad de las Piedades Rojas Soto,1904)
     father: (Juan Arguedas Víquez,1902)
 
 (Daisy Arguedas Rojas,1931):
     gender: F
     birthdate: '1931-05-05'
-    mother: (Oliva Trinidad de Las Piedades Rojas Soto,1904)
+    mother: (Oliva Trinidad de las Piedades Rojas Soto,1904)
     father: (Juan Arguedas Víquez,1902)
 
 (Fernando Arguedas Rojas,1932):
     gender: M
     birthdate: '1932-12-03'
     deathdate: '2003-02-22'
-    mother: (Oliva Trinidad de Las Piedades Rojas Soto,1904)
+    mother: (Oliva Trinidad de las Piedades Rojas Soto,1904)
     father: (Juan Arguedas Víquez,1902)
 
 (Virgilio Arguedas Rojas,1934):
     gender: M
     birthdate: '1934-07-29'
     deathdate: '1995-04-09'
-    mother: (Oliva Trinidad de Las Piedades Rojas Soto,1904)
+    mother: (Oliva Trinidad de las Piedades Rojas Soto,1904)
     father: (Juan Arguedas Víquez,1902)
 
 (Oldemar Arguedas Rojas,1935):
     gender: M
     birthdate: '1935-08-05'
-    mother: (Oliva Trinidad de Las Piedades Rojas Soto,1904)
+    mother: (Oliva Trinidad de las Piedades Rojas Soto,1904)
     father: (Juan Arguedas Víquez,1902)
 
 (Bernarda Arguedas Rojas,1937):
     gender: F
     birthdate: '1937-01-05'
-    mother: (Oliva Trinidad de Las Piedades Rojas Soto,1904)
+    mother: (Oliva Trinidad de las Piedades Rojas Soto,1904)
     father: (Juan Arguedas Víquez,1902)
 
 (Victorino Arguedas Rojas,1939):
@@ -3881,7 +3954,7 @@
     birthdate: '1939'
     deathdate: '1955-09-22'
     deathplace: Orotina, Alajuela
-    mother: (Oliva Trinidad de Las Piedades Rojas Soto,1904)
+    mother: (Oliva Trinidad de las Piedades Rojas Soto,1904)
     father: (Juan Arguedas Víquez,1902)
 
 (Ofelia Amelia de la Trinidad Rojas Soto,1906):

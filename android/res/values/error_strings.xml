@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="empty_value_error">This value can not be empty</string>
+    <string name="io_error">I/O error</string>
+    <string name="setup_profile_error">Could not run “Family Browser” since it was unable
+        to load your profile</string>
+
+</resources>

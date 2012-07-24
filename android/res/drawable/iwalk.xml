@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @see http://www.twintechs.com/blog/?p=35 -->
+<!-- @see http://developer.android.com/guide/topics/resources/animation-resource.html -->
+<!-- duration 67 ms = 15 Hz = 1/15 -->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false" >
+
+    <item
+        android:drawable="@drawable/iwalk0"
+        android:duration="67"/>
+    <item
+        android:drawable="@drawable/iwalk1"
+        android:duration="67"/>
+    <item
+        android:drawable="@drawable/iwalk2"
+        android:duration="67"/>
+    <item
+        android:drawable="@drawable/iwalk3"
+        android:duration="67"/>
+    <item
+        android:drawable="@drawable/iwalk4"
+        android:duration="67"/>
+    <item
+        android:drawable="@drawable/iwalk5"
+        android:duration="67"/>
+    <item
+        android:drawable="@drawable/iwalk6"
+        android:duration="67"/>
+    <item
+        android:drawable="@drawable/iwalk7"
+        android:duration="67"/>
+
+</animation-list>

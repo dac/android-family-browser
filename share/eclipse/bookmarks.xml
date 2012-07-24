@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmarks>
+   <site url="http://adt-addons.googlecode.com/svn/trunk/source/com.android.ide.eclipse.source.update/" selected="true" name="ADT Sources Plugin"/>
+   <site url="http://download.eclipse.org/egit/updates" selected="true" name="EGit Plugin"/>
+   <site url="http://eclipse-cs.sf.net/update/" selected="true" name="Checkstyle Plugin"/>
+   <site url="http://findbugs.cs.umd.edu/eclipse/" selected="true" name="FindBugs Plugin"/>
+   <site url="http://infinitest.github.com" selectextted="true" name="Infinitest"/>
+   <site url="http://pmd.sf.net/eclipse" selected="true" name="PMD Plugin"/>
+   <site url="http://pydev.org/updates" selected="true" name="PyDev Plugin"/>
+   <site url="https://dl-ssl.google.com/android/eclipse/" selectextted="true" name="ADT Plugin"/>
+   <site url="http://ucdetector.sourceforge.net/update" selected="true" name="UCDetector Plugin"/>
+   <site url="http://www.stateofflow.com/UpdateSite/" selected="true" name="StateOfFlow Plugins"/>
+</bookmarks>

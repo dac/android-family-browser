@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/vertical_screen" >
+
+    <View style="@style/filler_view" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="marquee"
+        android:text="@string/app_main_name"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="marquee"
+        android:text="@string/app_main_description"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:autoLink="all"
+        android:ellipsize="marquee"
+        android:linksClickable="true"
+        android:paddingTop="12sp"
+        android:text="@string/app_main_long_description3"
+        android:textSize="12sp" />
+
+    <View style="@style/filler_view" />
+
+    <TextView
+        android:id="@+id/version_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="marquee" />
+
+    <TextView
+        android:id="@+id/build_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="marquee"
+        android:singleLine="true" />
+
+    <View style="@style/filler_view" />
+
+    <LinearLayout style="@style/button_bar" >
+        
+        <Button
+            android:id="@+id/ok_button"
+            style="@style/default_button"
+            android:text="@android:string/ok" />
+
+        <Button
+            android:id="@+id/crash_button"
+            style="@style/negative_button"
+            android:text="@string/about_crash_button" />
+    </LinearLayout>
+
+</LinearLayout>

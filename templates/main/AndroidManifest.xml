@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @(#) templates/main/AndroidManifest.xml - PLEASE EDIT ONLY THE ORIGINAL TEMPLATE FILE -->
+{{default configChanges = "locale|orientation|keyboardHidden"}}<!-- WARNING: Every activity must have android:configChanges="{{configChanges}}" -->
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:debuggable="{{if DROID_DEBUG_ENABLED}}true{{else}}false{{endif}}"
+    android:versionCode="{{DROID_APP_VERSION}}"
+    android:versionName="{{DROID_APP_VERSNAME}}"
+    android:windowSoftInputMode="adjustPan"
+    package="{{DROID_APP_PACKAGE}}"
+>
+    <!-- This android:icon was created using http://android-ui-utils.googlecode.com/hg/asset-studio/dist/icons-launcher.html -->
+    <application
+        android:description="@string/app_main_description"
+        android:icon="@drawable/ic_main_launcher"
+        android:label="@string/app_main_name"
+        android:name="{{DROID_APP_PACKAGE}}.main.App"
+    >
+
+        <!-- main activities -->
+
+        <activity
+            android:configChanges="{{configChanges}}"
+            android:label="@string/splash_activity_title"
+            android:launchMode="singleTop"
+            android:name="{{DROID_APP_PACKAGE}}.main.Splash"
+            android:theme="@style/Theme.DarkTranslucent"
+        >
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.MAIN" />
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category
+                   android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:configChanges="{{configChanges}}"
+            android:label="@string/setup_activity_title"
+            android:launchMode="singleTop"
+            android:name="{{DROID_APP_PACKAGE}}.main.Setup"
+            android:theme="@android:style/Theme.Translucent"
+        >
+            <intent-filter>
+                <action
+                    android:name="{{DROID_APP_PACKAGE}}.intent.action.SETUP" />
+            </intent-filter>
+        </activity>
+
+        <!-- library activities -->
+
+        <activity
+            android:configChanges="{{configChanges}}"
+            android:label="@string/about_activity_title"
+            android:launchMode="singleTop"
+            android:name="{{DROID_APP_PACKAGE}}.app.about.AboutActivity"
+        >
+        </activity>
+        <activity
+            android:configChanges="{{configChanges}}"
+            android:label="@string/browser_activity_title"
+            android:launchMode="singleTop"
+            android:name="{{DROID_APP_PACKAGE}}.app.browser.BrowserActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+        >
+        </activity>
+        <activity
+            android:configChanges="{{configChanges}}"
+            android:label="@string/bookmark_activity_title"
+            android:launchMode="singleTop"
+            android:name="{{DROID_APP_PACKAGE}}.app.bookmark.BookmarkActivity"
+        >
+        </activity>
+        <activity
+            android:configChanges="{{configChanges}}"
+            android:label="@string/bookmarks_activity_title"
+            android:launchMode="singleTop"
+            android:name="{{DROID_APP_PACKAGE}}.app.bookmark.BookmarksActivity"
+        >
+        </activity>
+        <activity
+            android:configChanges="{{configChanges}}"
+            android:label="@string/settings_activity_title"
+            android:launchMode="singleTop"
+            android:name="{{DROID_APP_PACKAGE}}.app.settings.SettingsActivity"
+        >
+        </activity>
+
+        <meta-data
+           android:name="com.google.android.backup.api_key"
+            android:value="0xDEADBEEF" />
+    </application>
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" /> <!-- android:xlargeScreens="true" -->
+    <uses-permission
+        android:name="android.permission.VIBRATE" />
+    <uses-sdk
+        android:minSdkVersion="{{DROID_SDK_VERSION}}" />
+</manifest>
+

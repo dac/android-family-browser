@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+
+    <string name="app_main_name">Family Browser</string>
+    <string name="app_main_description">Who are my Relatives?</string>
+    <string name="app_main_long_description">        <![CDATA[This sofware was written by David Arturo Chaves <david@chaves.ca>]]>
+    </string>
+    <string name="app_main_long_description2">The source code is
+        hosted at http://code.google.com/p/android-family-browser</string>
+    <string name="app_main_long_description3">Please visit
+        http://david.chaves.ca for more information</string>
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @(#) templates/app/AndroidManifest.xml - PLEASE EDIT ONLY THE ORIGINAL TEMPLATE FILE -->
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:debuggable="{{if DROID_DEBUG_ENABLED}}true{{else}}false{{endif}}"
+    android:versionCode="{{DROID_APP_VERSION}}"
+    android:versionName="{{DROID_APP_VERSNAME}}"
+    package="ca.chaves.familyBrowser.app"
+>
+    <application/>
+</manifest>

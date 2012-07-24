@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @(#) templates/res/values/build_manifest.xml - PLEASE EDIT ONLY THE ORIGINAL TEMPLATE FILE -->
+<resources>
+    <string
+        name="build_git"
+    ><![CDATA[eac68c955e0cc548bc6b2f303165d9a1629c0970]]></string>
+    <string
+        name="build_tarball"
+    ><![CDATA[]]></string>
+    <string
+        name="build_uuid"
+    ><![CDATA[e76760d5-99d0-41a1-8762-274bedcb1371]]></string>
+    <string
+        name="build_version"
+    ><![CDATA[2.0]]></string>
+</resources>

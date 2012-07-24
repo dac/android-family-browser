@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for the "Content" pane -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_pane"
+    style="@style/vertical_screen"
+    android:layout_weight="1"
+    android:background="@drawable/white_background" >
+
+    <ListView
+        android:id="@+id/content_list"
+        style="@style/list" />
+
+</LinearLayout>

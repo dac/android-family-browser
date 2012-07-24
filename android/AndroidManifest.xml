@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @(#) templates/android/AndroidManifest.xml - PLEASE EDIT ONLY THE ORIGINAL TEMPLATE FILE -->
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:debuggable="false"
+    android:versionCode="2"
+    android:versionName="2.0"
+    package="ca.chaves.android"
+>
+    <application/>
+</manifest>

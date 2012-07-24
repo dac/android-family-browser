@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="about_activity_title">Family Browser About</string>
+    <string name="about_menu_title">About This App</string>
+
+</resources>
