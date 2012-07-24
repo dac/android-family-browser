@@ -1,0 +1,98 @@
+#summary Describe familyTree.db database
+#labels sqlite3,Featured,Phase-Implementation
+
+<wiki:toc max_depth="4" />
+
+= Introduction =
+
+The database is used to store a directed graph, where each "node" (vertice) contains a list of key-value attributes, and the "links" (edges) define child-to-parent relationships
+
+Please notice that the data stored in this database is a graph instead of a tree because any node can have many parents, not just one
+
+----
+= The source .yaml file =
+
+The graph stored in the database is maintained as a [http://en.wikipedia.org/wiki/Yaml .yaml] source file
+
+This is a sample node:
+{{{
+(Catalina Tuia Pereira,1580):
+    aka: Catalina Tuia
+    aka2: Catalina Pereira
+    gender: F
+    birthdate: '1580'
+    birthplace: Curridabat, Costa Rica
+    partner: (Francisco de Ocampo Golfín,1570)
+    comment: aborigen de Curridabat de la encomienda de Antonio Álvarez Pereira
+}}}
+where `(Catalina Tuia Pereira,1580)` is the node's unique identifier.  This identifier is in format `(FullName,YYYY)`, where the optional `YYYY` is person's birth date
+
+This node represents:
+  * a female (`gender: F`)
+  * a person born in `1580` (`birthdate: '1580'`)
+  * a person born in [http://en.wikipedia.org/wiki/Curridabat Curridabat] (`birthplace: Curridabat, Costa Rica`)
+  * a person _also known as_ "Catalina Tuia" (`aka: Catalina Tuia`)
+  * a person _also known as_ "Catalina Pereira"
+  * a "partner"ship link from this node to the node identified with `(Francisco de Ocampo Golfín,1570)` - the native _Catalina Tuia Pereira_ (1580) gave birth to a child of  [http://es.wikipedia.org/wiki/Corregimiento_de_Francisco_de_Ocampo_Golf%C3%ADn Francisco de Ocampo Golfín] (1570)
+
+----
+= The database schema =
+
+The database is made of two tables:
+  * the _attributes_ table, `attr_tab`
+  * the _nodes_ table, `nodes_tab`
+
+== The Attributes table ==
+
+On each node, the attributes are either `key -> value` pairs, or links to other nodes (these links also have `key`s and `value`s associated, where this `key` represents the link type, like _parent_ link)
+
+The attributes table defines:
+  * display labels
+  * display order - in which order the attributes are displayed
+  * should this attribute be displayed at all?
+
+This table contains these columns:
+  * `attr_id` integer - internal, unique id for this attribute, it also defines the display order
+  * `attr_hidden` boolean - true if the attribute must be hidden
+  * `attr_value` string - the attribute display label
+
+The column `attr_id` is the logical `primary key` for this table
+
+The attributes are defined in the `ATTRIBUTES` variable in [http://code.google.com/p/android-family-browser/source/browse/trunk/share/tools/create_familyTree_db.py create_familyTree_db.py]
+
+This is a sample data:
+|| *attr_id* || *attr_hidden* || *attr_value* || _comment_ ||
+|| 1 || 1 = True || Name || the "name:" field, it should be hidden since it is already displayed as the node's title ||
+|| 2 || 0 = False || Also known as || the "aka:" field in the .yaml file ||
+|| 3 || 0 || Also known as || the "aka2:" field ||
+
+== The Nodes table ==
+
+The nodes table contains these columns:
+  * `node_id` integer - internal, unique id for this node, but not `primary key` of this table
+  * `attr_id` integer - foreign key to the attributes table `attrs_tab`
+  * `link_id` integer - `node_id` of the destination node, when `attr_id` says that this is a "link" attribute (like the _parent_ link)
+    * this `link_id` is null when the `attr_id` says this is a normal attribute, not a link to any other node
+  * `text_value` string - the value or label of this attribute
+    * if `link_id` is not null, then this value usually is the `name` (displayable title) of the target node
+
+The columns `node_id`, `attr_id`, `link_id` would be the logical `primary key` for this table - except that it can not be defined as a `primary key` because the `link_id` can be null ([http://www.w3schools.com/sql/sql_primarykey.asp why?])
+
+This is sample data, produced by `SELECT * FROM nodes_tab WHERE node_id = 1000439 ORDER BY node_id, attr_id, link_id`:
+
+|| *node_id* || *attr_id* || *link_id* || *text_value* || _comment_ ||
+|| 1000439 || 1 || _NULL_ || Catalina Tuia Pereira || the "name:" attribute ||
+|| 1000439 || 2 || _NULL_ || Catalina Tuia || the "aka:" field ||
+|| 1000439 || 3 || _NULL_ || Catalina Pereira || the "aka2:" field ||
+|| 1000439 || 5 || _NULL_ || Female || the "gender:" field ||
+|| 1000439 || 10 || _NULL_ || 1580 || the "birthdate:" field ||
+|| 1000439 || 11 || _NULL_ || Curridabat, Costa Rica || the "birthplace:" field ||
+|| 1000439 || 60 || 1000351 || Francisco de Ocampo Golfín || the "partner:" field ||
+|| 1000439 || 90 || 1000342 || Gaspar de Rojas González || a child ||
+|| 1000439 || 90 || 1000425 || Ana de Sanabria || another child ||
+|| 1000439 || 90 || 1000429 || Gabriel de Aguilar || another child ||
+|| 1000439 || 90 || 1000435 || Luisa ? || child of unknown last-name ||
+|| 1000439 || 90 || 1000436 || María ? || child of unknown last-name ||
+
+----
+

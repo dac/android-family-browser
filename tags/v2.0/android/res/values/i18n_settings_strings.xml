@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="settings_defaults_category_title">Default
+        values</string>
+    <string name="settings_profile_title">Default
+        bookmark</string>
+    <string name="settings_profile_summary">Which would
+        be the default bookmark?</string>
+    <string name="settings_activity_title">Family Browser Settings</string>
+    <string name="settings_menu_title">Settings</string>
+    <string name="settings_about_menu_title">About This App</string>
+    <string name="settings_about_menu_shortcut">A</string>
+    <string name="settings_homepage_menu_title">App Homepage</string>
+    <string name="settings_homepage_menu_shortcut">H</string>
+    <string name="settings_homepage_menu_url">http://code.google.com/p/android-family-browser/</string>
+    <string name="settings_language_menu_title">System Language</string>
+    <string name="settings_language_menu_shortcut">L</string>
+
+</resources>

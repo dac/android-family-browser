@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file contains the layout used in the TabIndex list's group elements. @see class FamilyTabIndexListAdapter -->
+<!-- @see http://android-developers.blogspot.com/2009/02/android-layout-tricks-1.html -->
+<!-- @see http://stackoverflow.com/questions/2025282/difference-of-px-dp-dip-and-sp-in-android -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/horizontal_view"
+    android:gravity="left"
+    android:minHeight="36sp"
+    android:paddingLeft="38sp" >
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="6sp"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="6sp"
+        android:layout_toLeftOf="@+id/label2"
+        android:text="@string/colon"
+        android:textColor="@color/black"
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="6sp"
+        android:textColor="@color/black"
+        android:typeface="serif" />
+
+</RelativeLayout>

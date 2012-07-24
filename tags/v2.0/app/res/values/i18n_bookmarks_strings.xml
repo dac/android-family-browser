@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="bookmarks_activity_title">Family Browser Bookmarks</string>
+    <string name="bookmarks_menu_title">Bookmarks</string>
+    <string name="bookmarks_about_menu_title">About</string>
+    <string name="bookmarks_about_menu_shortcut">A</string>
+    <string name="bookmarks_bookmarks_menu_title">Bookmarks</string>
+    <string name="bookmarks_bookmarks_menu_shortcut">B</string>
+    <string name="bookmarks_settings_menu_title">Settings</string>
+    <string name="bookmarks_settings_menu_shortcut">S</string>
+    <string name="bookmarks_activate_by_bookmark_menu_item">Goto bookmark</string>
+    <string name="bookmarks_activate_by_bookmark_menu_shortcut">A</string>
+    <string name="bookmarks_edit_by_bookmark_menu_item">Edit bookmark</string>
+    <string name="bookmarks_edit_by_bookmark_menu_shortcut">E</string>
+    <string name="bookmarks_delete_by_bookmark_menu_item">Delete bookmark</string>
+    <string name="bookmarks_delete_by_bookmark_menu_shortcut">D</string>
+    <string name="bookmarks_add_title">Add Bookmark</string>
+    <string name="bookmarks_add_prompt">Bookmark name?</string>
+
+</resources>

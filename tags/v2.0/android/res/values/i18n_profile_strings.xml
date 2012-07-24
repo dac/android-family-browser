@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="profile_error">Error: %1$s\nThis value will be discarded!</string>
+    <string name="profile_localization_category_title">Localization</string>
+    <string name="profile_language_title">Language</string>
+    <string name="profile_language_summary">Which is your
+        preferred language?</string>
+    <string name="profile_language_default">es</string>
+
+</resources>

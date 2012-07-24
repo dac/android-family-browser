@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @(#) templates/test/AndroidManifest.xml - PLEASE EDIT ONLY THE ORIGINAL TEMPLATE FILE -->
+<!--
+     package name must be unique, so
+     suffix with ".test", so package loader doesn't ignore us
+-->
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:debuggable="{{if DROID_DEBUG_ENABLED}}true{{else}}false{{endif}}"
+    android:versionCode="{{DROID_APP_VERSION}}"
+    android:versionName="{{DROID_APP_VERSNAME}}"
+    package="{{DROID_APP_PACKAGE}}.test"
+>
+    <!--
+        We add an application tag here just so that we can indicate that
+        this package needs to link against the android.test library,
+        which is needed when building test cases.
+    -->
+    <application
+        android:description="@string/app_test_description"
+        android:icon="@drawable/icon"
+        android:label="@string/app_test_name"
+    >
+        <uses-library
+            android:name="android.test.runner" />
+    </application>
+    <!--
+        This declares that this application uses the instrumentation test runner targeting
+        the package of {{DROID_APP_PACKAGE}}.  To run the tests use the command:
+        "adb shell am instrument -w {{DROID_APP_PACKAGE}}.test/android.test.InstrumentationTestRunner"
+    -->
+    <instrumentation
+        android:label="Tests for {{DROID_APP_PACKAGE}}"
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="{{DROID_APP_PACKAGE}}" />
+    <uses-permission
+        android:name="android.permission.RUN_INSTRUMENTATION" />
+    <uses-sdk
+        android:minSdkVersion="{{DROID_SDK_VERSION}}" />
+</manifest>

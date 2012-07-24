@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#000000</color>
+    <color name="blue">#0066CC</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- background colors -->
+    <color name="background_red">#B33642</color> <!-- moderate amaranth -->
+    <color name="background_orange">#E8B315</color> <!-- brillant amber -->
+    <color name="background_green">#70800D</color> <!-- moderate apple green -->
+    <color name="background_blue">#4D648C</color> <!-- grayish cobalt blue -->
+    <color name="background_purple">#6F4D8C</color> <!-- grayish violet -->
+
+
+    <!-- foreground text colors -->
+    <color name="text_normal">#FFFFFF</color> <!-- white -->
+    <color name="text_bold">#FFFF00</color> <!-- luminous vivid yellow -->
+
+
+    <!-- miscellaneous -->
+    <color name="transparent">#80000000</color> <!-- the leading 80 is alpha channel = 50% dark -->
+
+
+    <!--
+    <color name="Black">#000</color>
+    <color name="Blue">#00F</color>
+    <color name="DarkGrey">#4F4F4F</color>
+    <color name="Green">#0F0</color>
+    <color name="Grey">#7F7F7F</color>
+    <color name="Red">#F00</color>
+    <color name="TransparentGrey">#7F000000</color>
+    <color name="White">#FFFFFF</color>
+    -->
+
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for SplashActivity -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/vertical_screen" >
+
+    <!-- EULA section -->
+
+    <ScrollView
+        style="@style/vertical_screen"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:id="@+id/splash_eula_section"
+            style="@style/vertical_screen"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/eula_content"
+                style="@style/body"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="@string/eula_content"
+                android:textStyle="bold"
+                android:width="0dp" />
+
+            <Button
+                android:id="@+id/eula_view_button"
+                style="@style/button_1"
+                android:text="@string/eula_view_button" />
+
+            <LinearLayout style="@style/button_bar" >
+
+                <Button
+                    android:id="@+id/eula_accept_button"
+                    style="@style/default_button"
+                    android:text="@string/eula_accept_button" />
+
+                <Button
+                    android:id="@+id/eula_decline_button"
+                    style="@style/negative_button"
+                    android:text="@string/eula_decline_button" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Animation section -->
+
+    <ImageView
+        android:id="@+id/splash_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="@string/splash_animation"
+        android:src="@drawable/iwalk" />
+
+</LinearLayout>

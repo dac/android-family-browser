@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="delete_title_text">CONFIRM</string>
+    <string name="delete_this_message_text">Delete this?</string>
+    <string name="delete_that_message_text">Delete “%1$s” ?</string> <!-- these are not ASCII quotes! -->
+    <string name="delete_button">DELETE</string>
+
+</resources>

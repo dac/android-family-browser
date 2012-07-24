@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for the "Start" pane -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/start_pane"
+    style="@style/vertical_screen"
+    android:layout_weight="1"
+    android:background="@drawable/green_background" >
+
+    <ScrollView
+        style="@style/vertical_screen"
+        android:fillViewport="true" >
+
+        <LinearLayout style="@style/vertical_view" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="18sp"
+                android:text="@string/app_main_description"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16sp"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:text="@string/app_main_long_description"
+                android:textColor="@color/black"
+                android:textColorLink="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16sp"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:text="@string/app_main_long_description2"
+                android:textColor="@color/black"
+                android:textColorLink="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16sp"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:text="@string/app_main_long_description3"
+                android:textColor="@color/black"
+                android:textColorLink="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

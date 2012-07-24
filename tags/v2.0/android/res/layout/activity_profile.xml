@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for BookmarkActivity -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/vertical_screen" >
+
+    <ListView
+        android:id="@android:id/list"
+        style="@style/list" />
+
+</LinearLayout>

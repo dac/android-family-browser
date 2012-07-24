@@ -1,0 +1,100 @@
+#
+# @(#) .gitignore
+# see http://www.kernel.org/pub/software/scm/git/docs/gitignore.html
+#
+
+*~
+*.log
+*.pyc
+*.swp
+
+# android-sdk emulator files:
+*.img
+*.img.lock
+
+# subversion internal files:
+.svn
+
+#--------------------------------------- /share
+
+# `doxygen` output:
+/share/doxygen/html/
+
+#--------------------------------------- /android
+
+# `ant` output:
+/android/bin/
+/android/build/
+/android/gen/
+/android/libs/
+/android/obj/
+
+# `android update` output:
+/android/build.xml
+# eclipse needs /android/project.properties
+/android/local.properties
+#/android/proguard.cfg
+/android/proguard-project.txt
+
+# templates output:
+/android/res/values/build_manifest.xml
+
+#--------------------------------------- /app
+
+# `ant` output:
+/app/bin/
+/app/build/
+/app/gen/
+/app/libs/
+/app/obj/
+
+# `android update` output:
+/app/build.xml
+# eclipse needs /app/project.properties
+/app/local.properties
+#/app/proguard.cfg
+/app/proguard-project.txt
+
+#--------------------------------------- /main
+
+# `ant` output:
+/main/bin/
+/main/build/
+/main/gen/
+/main/libs/
+/main/obj/
+
+# `android update` output:
+/main/build.xml
+# eclipse needs /main/project.properties
+/main/local.properties
+#/main/proguard.cfg
+/main/proguard-project.txt
+
+# templates output:
+/main/res/values/build_manifest.xml
+
+# other files:
+/main/res/raw/tarball*
+
+#--------------------------------------- /test
+
+# `ant` output:
+/test/bin/
+/test/build/
+/test/gen/
+/test/libs/
+/test/obj/
+/test/coverage.em
+
+# `android update` output:
+/test/build.xml
+# eclipse needs /test/project.properties
+/test/local.properties
+#/test/proguard.cfg
+/test/proguard-project.txt
+
+# templates output:
+/test/res/values/build_manifest.xml
+
+#--------------------------------------- The End

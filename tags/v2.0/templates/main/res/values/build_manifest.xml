@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @(#) templates/res/values/build_manifest.xml - PLEASE EDIT ONLY THE ORIGINAL TEMPLATE FILE -->
+<resources>
+    <string
+        name="build_git"
+    ><![CDATA[{{DROID_GIT_BRANCH}}]]></string>
+    <string
+        name="build_tarball"
+    ><![CDATA[{{DROID_TARBALL_HASH}}]]></string>
+    <string
+        name="build_uuid"
+    ><![CDATA[{{DROID_BUILD_UUID}}]]></string>
+    <string
+        name="build_version"
+    ><![CDATA[{{DROID_APP_VERSNAME}}]]></string>
+</resources>

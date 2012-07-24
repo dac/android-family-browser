@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="browser_activity_title">Family Browser</string>
+    <string name="browser_about_menu_title">About</string>
+    <string name="browser_about_menu_shortcut">A</string>
+    <string name="browser_bookmarks_menu_title">Bookmarks</string>
+    <string name="browser_bookmarks_menu_shortcut">B</string>
+    <string name="browser_settings_menu_title">Settings</string>
+    <string name="browser_settings_menu_shortcut">S</string>
+    <string name="browser_start_button">Help</string>
+    <string name="browser_content_button">Life</string>
+    <string name="browser_index_button">Family</string>
+    <string name="browser_goto_title">Go to</string>
+
+</resources>

@@ -1,0 +1,17 @@
+#
+# @(#) .gitignore
+# @see http://progit.org/book/ch7-2.html
+#
+
+# files to be treated as binary file:
+*.apk -crlf -diff -merge
+*.gif -crlf -diff -merge
+*.gz -crlf -diff -merge
+*.jar -crlf -diff -merge
+*.jpg -crlf -diff -merge
+*.keystore -crlf -diff -merge
+*.png -crlf -diff -merge
+*.tar -crlf -diff -merge
+*.zip -crlf -diff -merge
+
+#--------------------------------------- The End

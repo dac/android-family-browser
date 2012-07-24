@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for the "Index" pane -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/index_pane"
+    style="@style/vertical_screen"
+    android:layout_weight="1"
+    android:background="@drawable/yellow_background" >
+
+    <ExpandableListView
+        android:id="@+id/index_list"
+        style="@style/list" />
+
+</LinearLayout>

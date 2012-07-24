@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for InputTextDialog -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/vertical_dialog" >
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:gravity="center"
+        android:textSize="24dp" />
+
+    <!-- must ignore the warning "use a layout_with of 0dip instead of fill_parent" in next EditText -->
+
+    <EditText
+        android:id="@+id/input_text"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        android:layout_weight="1"
+        android:autoText="false"
+        android:capitalize="none"
+        android:gravity="left"
+        android:imeOptions="actionGo"
+        android:inputType="text"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <LinearLayout style="@style/button_bar" >
+
+        <Button
+            android:id="@+id/ok_button"
+            style="@style/default_button"
+            android:text="@android:string/ok" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            style="@style/negative_button"
+            android:text="@android:string/cancel" />
+    </LinearLayout>
+
+</LinearLayout>

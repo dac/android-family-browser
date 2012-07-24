@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/bookmarks_about_menu_item"
+        android:alphabeticShortcut="@string/bookmarks_about_menu_shortcut"
+        android:icon="@drawable/ic_menu_snowman"
+        android:title="@string/bookmarks_about_menu_title"/>
+    <item
+        android:id="@+id/bookmarks_bookmarks_menu_item"
+        android:alphabeticShortcut="@string/bookmarks_bookmarks_menu_shortcut"
+        android:icon="@drawable/ic_menu_bear"
+        android:title="@string/bookmarks_bookmarks_menu_title"/>
+    <item
+        android:id="@+id/bookmarks_settings_menu_item"
+        android:alphabeticShortcut="@string/bookmarks_settings_menu_shortcut"
+        android:icon="@drawable/ic_menu_magic"
+        android:title="@string/bookmarks_settings_menu_title"/>
+
+</menu>

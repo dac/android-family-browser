@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="crash_report_dialog_title">Send error log?</string>
+    <string name="crash_report_dialog_prompt">Would you like to
+        send to the developer any existent error log, to fix those issues
+        in the future?</string>
+
+</resources>

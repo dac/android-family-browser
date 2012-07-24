@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- retrieve global node attributes (all of them) -->
+    <string name="graph_sql_select_attributes">        <![CDATA[
+        select attr_id
+             , attr_hidden
+             , attr_value
+          from attrs_tab
+    ]]>
+    </string>
+    <!-- retrieve node attributes of a given node_id -->
+    <string name="graph_sql_select_node_by_node_id">        <![CDATA[
+        select attr_id
+             , text_value
+          from nodes_tab
+         where node_id = ?
+         order by attr_id
+    ]]>
+    </string>
+    <!-- retrieve node edges of a given node_id -->
+    <string name="graph_sql_select_edges_by_node_id">        <![CDATA[
+        select link_id
+             , text_value
+          from nodes_tab
+         where node_id = ?
+           and attr_id in ( %s )
+         order by attr_id
+    ]]>
+    </string>
+    <!-- please keep next values synchronized with source file share/tools/familyTree_yaml.py -->
+    <string name="graph_edge_id_parents">50,51,52,53,54</string> <!-- attribute "parent", "father", "mother", and alike -->
+    <string name="graph_edge_id_partners">60,65</string> <!-- attribute "partner", "spouse", and alike -->
+    <string name="graph_edge_id_children">90</string> <!-- attribute "child" -->
+    <string name="graph_edge_id_siblings">91</string> <!-- attribute "sibling" -->
+
+</resources>
