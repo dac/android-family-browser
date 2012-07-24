@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="eula_content">Important: use of this software is governed by
+        the License Agreement, which can be viewed at
+        http://www.gnu.org/licenses/gpl-2.0.html or by clicking on “View
+        License Agreement” below. By clicking “Accept” or by otherwise
+        using the software, you represent that you have read the License
+        Agreement carefully, understand it and agree to be bound by its
+        terms. If you do not wish to be bound by any of its terms, click
+        “Decline” and you will not be able to use this software.</string>
+    <string name="eula_view_uri">http://www.gnu.org/licenses/gpl-2.0.html</string>
+    <string name="eula_view_button">View License Agreement</string>
+    <string name="eula_accept_button">Accept</string>
+    <string name="eula_decline_button">Decline</string>
+
+</resources>

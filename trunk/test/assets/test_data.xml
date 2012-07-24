@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sample>
+    <node>
+        <name>Sofía Cristina Chaves Chen</name>
+        <father>David Arturo Chaves Trejos</father>
+        <mother>Teresa Chen Achong</mother>
+    </node>
+    <node>
+        <name>David Arturo Chaves Trejos</name>
+        <father>Modesto Rosario de Jesús Chaves Rodríguez</father>
+        <mother>Lucía del Socorro Trejos Calvo</mother>
+    </node>
+    <node>
+        <name>Ana Fabiola Chaves Trejos</name>
+        <father>Modesto Rosario de Jesús Chaves Rodríguez</father>
+        <mother>Lucía del Socorro Trejos Calvo</mother>
+    </node>
+    <node>
+        <name>Modesto Rosario de Jesús Chaves Rodríguez</name>
+    </node>
+    <node>
+        <name>Lucía del Socorro Trejos Calvo</name>
+        <father>Bernardo Alberto de las Piedades Rojas Soto</father>
+        <mother>Ynés Berta de las Piedades Trejos Calvo</mother>
+    </node>
+    <node>
+        <name>Bernardo Alberto de las Piedades Rojas Soto</name>
+    </node>
+    <node>
+        <name>Ynés Berta de las Piedades Trejos Calvo</name>
+    </node>
+</sample>

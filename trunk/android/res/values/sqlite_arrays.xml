@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="database_sql_init">
+        <item>            <![CDATA[
+            create index if not exists
+                   nodes_idx
+                on nodes_tab(node_id, attr_id, link_id)
+        ]]>
+        </item>
+    </string-array>
+
+</resources>

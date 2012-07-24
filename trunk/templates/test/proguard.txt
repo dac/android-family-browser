@@ -1,0 +1,41 @@
+#
+# @(#) templates/test/proguard.txt
+# THIS FILE MIGHT HAVE BEEN GENERATED FROM A TEMPLATE.
+# PLEASE EDIT ONLY THE ORIGINAL TEMPLATE FILE.
+#
+# @see http://proguard.sourceforge.net/index.html#/manual/examples.html
+# @see http://lulachronicles.blogspot.com/2011/05/obfuscate-android-builds-using-proguard.html
+#
+##
+#-dontoptimize
+#-dontshrink
+##
+#
+
+-dump
+-printmapping
+-printseeds
+-printusage
+-target 1.6
+-verbose
+#-dontnote
+
+#; when building on MS-Windows where x.class and X.class is the same file
+-dontusemixedcaseclassnames
+
+#; obfuscate nothing
+-dontobfuscate
+
+#; dex does not like code run through proguard optimize and preverify steps
+-dontpreverify
+
+#; some classes in the libraries extend package private classes to share
+#; common functionality that isn't explicitly part of the API
+-dontskipnonpubliclibraryclasses
+-dontskipnonpubliclibraryclassmembers
+
+#; optimize nothing
+-dontoptimize
+-dontshrink
+
+#--------------------------------------- The End

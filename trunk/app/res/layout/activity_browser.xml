@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for browser/BrowserActivity.java -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    style="@style/vertical_screen" >
+
+    <!-- header -->
+
+    <include layout="@layout/include_browser_header" />
+
+    <!-- body -->
+
+    <include layout="@layout/include_browser_body_start" />
+
+    <include layout="@layout/include_browser_body_content" />
+
+    <include layout="@layout/include_browser_body_index" />
+
+    <!-- footer -->
+
+    <RadioGroup style="@style/button_navbar" >
+
+        <RadioButton
+            android:id="@+id/start_button"
+            style="@style/navbar_button"
+            android:background="@drawable/green_background"
+            android:drawableTop="@drawable/ic_star"
+            android:text="@string/browser_start_button"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/content_button"
+            style="@style/navbar_button"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/white_background"
+            android:drawableTop="@drawable/ic_notepad"
+            android:text="@string/browser_content_button"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/index_button"
+            style="@style/navbar_button"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/yellow_background"
+            android:drawableTop="@drawable/ic_family"
+            android:text="@string/browser_index_button"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+</LinearLayout>

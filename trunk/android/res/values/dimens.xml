@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- layout elements -->
+    <dimen name="tab_height">38dip</dimen>
+    <dimen name="tab_side_padding">2dp</dimen>
+    <dimen name="button_height">12sp</dimen>
+    <dimen name="button_margin">6dip</dimen>
+    <dimen name="button_minWidth">96sp</dimen>
+
+    <!-- body content -->
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">18sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">18sp</dimen>
+
+</resources>

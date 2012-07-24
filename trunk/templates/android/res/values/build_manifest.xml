@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @(#) templates/res/values/build_manifest.xml - PLEASE EDIT ONLY THE ORIGINAL TEMPLATE FILE -->
+<resources>
+    <string
+        name="build_git"
+    ><![CDATA[{{DROID_GIT_BRANCH}}]]></string>
+    <string
+        name="build_tarball"
+    ><![CDATA[{{DROID_TARBALL_HASH}}]]></string>
+    <string
+        name="build_uuid"
+    ><![CDATA[{{DROID_BUILD_UUID}}]]></string>
+    <string
+        name="build_version"
+    ><![CDATA[{{DROID_APP_VERSNAME}}]]></string>
+    <string
+        name="crash_report_mail_subject"
+    >{{DROID_APP_NAME}} {{DROID_APP_VERSNAME}} crash report</string>
+    <string
+        name="crash_report_mail_body"
+    >Crash report, package {{DROID_APP_PACKAGE}} {{DROID_APP_VERSION}}</string>
+    <string-array
+        name="crash_report_mail_sendto"
+    >
+        <item>david.a.chaves@gmail.com</item>
+        <item>david@chaves.ca</item>
+    </string-array>
+</resources>
+

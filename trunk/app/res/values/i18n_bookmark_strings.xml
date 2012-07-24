@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="bookmark_activity_title">Family Browser Bookmark</string>
+    <string name="bookmark_defaults_category_title">Default values</string>
+    <string name="bookmark_node_id_title">Location</string>
+    <string name="bookmark_main_category_title">Bookmark</string>
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/vertical_screen" >
+
+    <ListView
+        android:id="@+id/list"
+        style="@style/list" />
+
+    <LinearLayout style="@style/button_bar" >
+
+        <Button
+            android:id="@+id/add_button"
+            style="@style/default_button"
+            android:text="@string/bookmarks_add_title" />
+    </LinearLayout>
+
+</LinearLayout>

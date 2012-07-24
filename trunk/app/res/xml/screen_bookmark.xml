@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/bookmark_defaults_category_title" >
+        <ListPreference
+            android:defaultValue=""
+            android:dialogTitle="@string/bookmark_node_id_title"
+            android:key="node"
+            android:summary="@string/bookmark_node_id_title"
+            android:title="@string/bookmark_node_id_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/profile_localization_category_title" >
+        <ListPreference
+            android:defaultValue="@string/profile_language_default"
+            android:dialogTitle="@string/profile_language_title"
+            android:entries="@array/profile_language_labels"
+            android:entryValues="@array/profile_language_values"
+            android:key="lang"
+            android:summary="@string/profile_language_summary"
+            android:title="@string/profile_language_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

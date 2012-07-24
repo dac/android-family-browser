@@ -1,0 +1,50 @@
+
+----------------------------------------
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+        notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
+        // see http://developer.android.com/guide/topics/ui/notifiers/notifications.html
+        // see http://stackoverflow.com/questions/4867338/custom-notification-layouts-and-text-colors
+
+        final long when = System.currentTimeMillis(); // notification time
+
+        final Intent notificationIntent = new Intent(context, TheActivity.class);
+        final PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
+
+        final Notification notification = new Notification(iconResourceId, contentTitle, when);
+
+        if (__this_is_the_first_RED_notification__ && null != audioManager) {
+            switch (audioManager.getRingerMode()) {
+            case AudioManager.RINGER_MODE_VIBRATE: {
+                notification.vibrate = new long[] { 100, 250, 100, 500 };
+                break;
+            }
+            case AudioManager.RINGER_MODE_NORMAL: {
+                notification.defaults = Notification.DEFAULT_SOUND;
+                break;
+            }
+            case AudioManager.RINGER_MODE_SILENT: {
+                notification.ledARGB = 0xFF0000FF;
+                notification.ledOnMS = 500;
+                notification.ledOffMS = 3000;
+                notification.flags |= Notification.FLAG_SHOW_LIGHTS;
+                break;
+            }
+            }
+        }
+
+        notification.flags = (Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR);
+        if (__this_is_a_RED_notification__) {
+            notification.flags = (Notification.FLAG_AUTO_CANCEL);
+        }
+        notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+
+        notificationManager.notify(NOTIFICATION_ID, notification);
+
+----------------------------------------
+----------------------------------------
+----------------------------------------
+

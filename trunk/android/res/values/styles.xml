@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @see http://www.codeproject.com/script/Articles/ArticleVersion.aspx?aid=113831&av=161784 -->
+<resources>
+
+    <!-- layout elements -->
+
+    <style name="filler_view">
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="horizontal_view">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="vertical_view">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="vertical_dialog" parent="vertical_view">
+        <!-- empty -->
+    </style>
+
+    <style name="vertical_screen" parent="vertical_view">
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <!-- ui elements -->
+
+
+    <!-- @see http://www.dibbus.com/2011/02/gradient-buttons-for-android -->
+    <style name="abstract_button" parent="@android:style/Widget.Button">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">@dimen/button_minWidth</item>
+        <item name="android:shadowColor">#FF000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:textSize">@dimen/button_height</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="button_1" parent="abstract_button">
+        <item name="android:background">@drawable/blue_button</item>
+        <item name="android:textColor">@color/text_normal</item>
+    </style>
+
+    <style name="button_2" parent="abstract_button">
+        <item name="android:background">@drawable/green_button</item>
+        <item name="android:textColor">@color/text_normal</item>
+    </style>
+
+    <style name="button_3" parent="abstract_button">
+        <item name="android:background">@drawable/purple_button</item>
+        <item name="android:textColor">@color/text_normal</item>
+    </style>
+
+    <style name="button_4" parent="abstract_button">
+        <item name="android:background">@drawable/red_button</item>
+        <item name="android:textColor">@color/text_normal</item>
+    </style>
+
+    <style name="button_5" parent="abstract_button">
+        <item name="android:background">@drawable/black_button</item>
+        <item name="android:textColor">@color/text_normal</item>
+    </style>
+
+    <style name="default_button" parent="button_2">
+        <item name="android:textColor">@color/text_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="negative_button" parent="button_4">
+        <!-- empty -->
+    </style>
+
+    <style name="button_bar" parent="horizontal_view">
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="navbar_button">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="button_navbar" parent="button_bar">
+        <item name="android:background">@drawable/navbar_background</item>
+        <item name="android:layout_height">72dp</item>
+    </style>
+
+    <style name="body" parent="vertical_view">
+        <item name="android:autoLink">all</item>
+        <item name="android:background">@drawable/yellow_background</item>
+        <item name="android:layout_margin">6dip</item>
+        <item name="android:linksClickable">true</item>
+        <item name="android:padding">24dip</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="list" parent="vertical_view"> <!-- vertical list -->
+        <item name="android:cacheColorHint">#00000000</item>
+        <item name="android:layout_height">0dip</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- activity styles -->
+
+    <style name="Theme.DarkTranslucent" parent="android:style/Theme.Translucent">
+
+        <!-- <item name="android:backgroundDimEnabled">true</item> -->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:windowBackground">@color/transparent</item> <!-- use @android:color/transparent for fully transparent -->
+        <item name="android:windowNoTitle">false</item>
+    </style>
+
+</resources>
