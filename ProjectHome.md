@@ -1,0 +1,7 @@
+This application allows you to know _who are your relatives_ in Android smartphones.  It displays information about your brothers, sisters, cousins, children, parents, grand-parents, and so on.  Please see the [Screenshots](Screenshots.md) wiki page for some examples
+
+Enter you family information in the [familyTree.yaml](http://code.google.com/p/android-family-browser/source/browse/trunk/familyTree.yaml) file, and run [make](http://www.gnu.org/software/make/) to build the [FamilyTree.apk](http://code.google.com/p/android-family-browser/downloads/list) Android application using it.  Please read the [README.txt](http://code.google.com/p/android-family-browser/source/browse/trunk/README.txt) file for more information about
+
+The original [familyTree.yaml](http://code.google.com/p/android-family-browser/source/browse/trunk/familyTree.yaml) file contains a small subset of the [david@chaves.ca](http://david.chaves.ca)'s genealogy, back to the 1500's when the [Spaniard Conquistadores](http://en.wikipedia.org/wiki/Conquistador) came to [Costa Rica](http://www.chaves.ca/costa-rica) to have [children with local aborigines](http://translate.google.com/translate?js=n&prev=_t&hl=en&ie=UTF-8&layout=2&eotf=1&sl=es&tl=en&u=http%3A%2F%2Fwvw.nacion.com%2Fln_ee%2FESPECIALES%2Fraices%2Ffamrojas.html)
+
+Also available at the [Android Market](https://market.android.com/details?id=ca.chaves.familyBrowser)
